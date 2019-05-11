@@ -1,0 +1,48 @@
+package OLEDLibDXE;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'OLED Library'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  rtl,
+  vclx,
+  vclimg;
+
+contains
+  UOLEDControls in 'UOLEDControls.pas',
+  UOLEDConstants in 'UOLEDConstants.pas',
+  UOLEDShape in 'UOLEDShape.pas',
+  UOLEDBaseControlPanel in 'UOLEDBaseControlPanel.pas',
+  UOLED7Segment in 'UOLED7Segment.pas',
+  UOLEDBitmaps in 'UOLEDBitmaps.pas',
+  UOLEDPanel in 'UOLEDPanel.pas',
+  UOLEDKnob in 'UOLEDKnob.pas';
+
+end.

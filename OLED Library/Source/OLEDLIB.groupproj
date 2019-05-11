@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{867F0A2F-546D-4470-A9B7-1CE226388DDE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="OLEDLibDXE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DsgnOLEDDXE.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="OLEDLibDXE">
+        <MSBuild Projects="OLEDLibDXE.dproj"/>
+    </Target>
+    <Target Name="OLEDLibDXE:Clean">
+        <MSBuild Projects="OLEDLibDXE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OLEDLibDXE:Make">
+        <MSBuild Projects="OLEDLibDXE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DsgnOLEDDXE">
+        <MSBuild Projects="DsgnOLEDDXE.dproj"/>
+    </Target>
+    <Target Name="DsgnOLEDDXE:Clean">
+        <MSBuild Projects="DsgnOLEDDXE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DsgnOLEDDXE:Make">
+        <MSBuild Projects="DsgnOLEDDXE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="OLEDLibDXE;DsgnOLEDDXE"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="OLEDLibDXE:Clean;DsgnOLEDDXE:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="OLEDLibDXE:Make;DsgnOLEDDXE:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
