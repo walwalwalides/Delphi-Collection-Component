@@ -13,7 +13,7 @@ unit UOLEDControls;
 interface
 
 uses
-  System.SysUtils, System.Classes, Messages, Vcl.Controls, Vcl.ExtCtrls, Vcl.Graphics, Types, UOLEDKNOB, UOLEDConstants,
+  System.SysUtils, System.Classes, Messages, Vcl.Controls, Vcl.ExtCtrls, Vcl.Graphics,vcl.Dialogs, Types, UOLEDKNOB, UOLEDConstants,
   UOLEDShape;
 
 type
@@ -215,6 +215,7 @@ end;
 
 procedure TOLEDPotentiometer.HandleOnMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: integer);
 begin
+
   if FOLEDShape <> NIL then
     FOLEDShape.OnMouseUp(Sender, Button, Shift, X, Y);
 end;
@@ -235,6 +236,7 @@ begin
       value := round(127 * newIndex / (DiscretePoints - 1));
     end;
     FOnChanged(self, Index, value);
+
   end;
 end;
 
