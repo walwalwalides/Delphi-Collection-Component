@@ -141,9 +141,6 @@ object frmMain: TfrmMain
     DoubleBuffered = True
     Color = 2434341
     FontSize = 8
-    ExplicitLeft = 544
-    ExplicitTop = 8
-    ExplicitHeight = 329
     object OLEDPotentiometer3: TOLEDPotentiometer
       AlignWithMargins = True
       Left = 15
@@ -171,8 +168,7 @@ object frmMain: TfrmMain
       OverLayR1 = 0
       OverLayR2 = 0
       OverLayShape = 0
-      ExplicitLeft = 39
-      ExplicitTop = -89
+      ExplicitTop = 13
     end
   end
 end

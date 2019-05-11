@@ -78,7 +78,7 @@ type
     FDiscreteIndex: integer;
     FOverlayR1, FOverlayR2, FOverlayShape: integer;
     FOptions: TOptions;
-    FRMCShape: TOLEDShape;
+    FOLEDShape: TOLEDShape;
     FOnChanged: TOnChanged;
     FKnobEditor: TKnobEditor;
     FonBeforePaint: TonBeforePaint;
@@ -156,8 +156,8 @@ uses Windows, Math;
 
 procedure TOLEDPotentiometer.SetAttributeValue(msg, value: integer);
 begin
-  if FRMCShape <> NIL then
-    FRMCShape.SetAttributeValue(msg, value);
+  if FOLEDShape <> NIL then
+    FOLEDShape.SetAttributeValue(msg, value);
 end;
 
 procedure TOLEDPotentiometer.SetButtonColorOff(value: TColor);
@@ -203,20 +203,20 @@ end;
 
 procedure TOLEDPotentiometer.HandleOnMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: integer);
 begin
-  if FRMCShape <> NIL then
-    FRMCShape.OnMouseDown(Sender, Button, Shift, X, Y);
+  if FOLEDShape <> NIL then
+    FOLEDShape.OnMouseDown(Sender, Button, Shift, X, Y);
 end;
 
 procedure TOLEDPotentiometer.HandleOnMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
 begin
-  if FRMCShape <> NIL then
-    FRMCShape.OnMouseMove(Sender, Shift, X, Y);
+  if FOLEDShape <> NIL then
+    FOLEDShape.OnMouseMove(Sender, Shift, X, Y);
 end;
 
 procedure TOLEDPotentiometer.HandleOnMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: integer);
 begin
-  if FRMCShape <> NIL then
-    FRMCShape.OnMouseUp(Sender, Button, Shift, X, Y);
+  if FOLEDShape <> NIL then
+    FOLEDShape.OnMouseUp(Sender, Button, Shift, X, Y);
 end;
 
 procedure TOLEDPotentiometer.OnShapeValueChanged(Sender: TObject; value: integer);
@@ -240,11 +240,11 @@ end;
 
 procedure TOLEDPotentiometer.SetKnobShape(value: TOLEDKnobShape);
 begin
-  if (Shape = value) and (FRMCShape <> NIL) then
+  if (Shape = value) and (FOLEDShape <> NIL) then
     exit;
-  if FRMCShape <> NIL then
-    FRMCShape.Free;
-  FRMCShape := CreateShape(self, value, OnShapeValueChanged);
+  if FOLEDShape <> NIL then
+    FOLEDShape.Free;
+  FOLEDShape := CreateShape(self, value, OnShapeValueChanged);
   FShape := value;
   Invalidate;
 end;
@@ -311,8 +311,8 @@ procedure TOLEDPotentiometer.DefaultWH(var w, h: integer);
 begin
   w := 64;
   h := 64;
-  if FRMCShape <> NIL then
-    FRMCShape.DefaultWH(w, h)
+  if FOLEDShape <> NIL then
+    FOLEDShape.DefaultWH(w, h)
 end;
 
 procedure TOLEDPotentiometer.CopyOptions(source: TOLEDPotentiometer);
@@ -326,7 +326,7 @@ end;
 
 constructor TOLEDPotentiometer.Create(AOwner: TComponent);
 begin
-  FRMCShape := NIL;
+  FOLEDShape := NIL;
   inherited;
   DiscretePoints := 0;
   Cursor := crHandPoint;
@@ -344,8 +344,8 @@ begin
   inherited;
   if assigned(BeforeOnPaint) then
     BeforeOnPaint(self);
-  if FRMCShape <> NIL then
-    FRMCShape.Paint;
+  if FOLEDShape <> NIL then
+    FOLEDShape.Paint;
 end;
 
 procedure TOLEDPotentiometer.SetSliderColor(value: TColor);
@@ -365,8 +365,8 @@ begin
   if FValue = aValue then
     exit;
   FValue := aValue;
-  if FRMCShape <> NIL then
-    FRMCShape.SetValue(aValue);
+  if FOLEDShape <> NIL then
+    FOLEDShape.SetValue(aValue);
   Invalidate;
 end;
 
