@@ -145,19 +145,14 @@ type
   TVCLBitmap = Vcl.Graphics.TBitmap;
   ArrayOfInteger = TArray<integer>;
 
-  // procedure Register;
 
 implementation
 
-//{$R RMC.RES}
 
 uses Windows, Math;
 // type TVCLBitmap = Vcl.Graphics.TBitmap;
 
-// procedure Register;
-// begin
-// RegisterComponents('RMC', [TOLEDPotentiometer]);
-// end;
+
 
 procedure TOLEDPotentiometer.SetAttributeValue(msg, value: integer);
 begin

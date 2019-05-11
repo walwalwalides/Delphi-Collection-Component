@@ -185,6 +185,7 @@ VAR s:string;
 begin
   with Canvas do
   begin
+
     Brush.color:=$252525;
     Pen.Color:=RGB(156,145,148);//Brush.Color;
     Brush.Style:=bsSolid;

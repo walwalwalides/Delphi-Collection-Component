@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
-  Caption = 'frmMain'
+  Caption = 'Demo1'
   ClientHeight = 345
   ClientWidth = 624
   Color = 2434341
@@ -15,8 +15,8 @@ object frmMain: TfrmMain
   PixelsPerInch = 96
   TextHeight = 13
   object lblValue1: TLabel
-    Left = 48
-    Top = 90
+    Left = 43
+    Top = 99
     Width = 39
     Height = 16
     Alignment = taCenter
@@ -29,8 +29,8 @@ object frmMain: TfrmMain
     ParentFont = False
   end
   object lblValue2: TLabel
-    Left = 180
-    Top = 90
+    Left = 153
+    Top = 99
     Width = 39
     Height = 16
     Alignment = taCenter
@@ -43,8 +43,8 @@ object frmMain: TfrmMain
     ParentFont = False
   end
   object OLEDPanel1: TOLEDPanel
-    Left = 24
-    Top = -8
+    Left = 6
+    Top = 1
     Width = 105
     Height = 100
     Caption = ''
@@ -72,22 +72,22 @@ object frmMain: TfrmMain
       ButtonColorOn = clRed
       SliderColor = clWhite
       TextWithSeg7 = False
-      Shape = trKnob
+      Shape = trPitchKnob
+      OnChanged = OLEDPotentiometer1Changed
       MinValue = 0
       MaxValue = 127
       value = 0
       OverLayR1 = 0
       OverLayR2 = 0
       OverLayShape = 0
-      ExplicitLeft = 0
-      ExplicitTop = 16
+      ExplicitLeft = 8
       ExplicitWidth = 105
-      ExplicitHeight = 105
+      ExplicitHeight = 100
     end
   end
   object OLEDPanel2: TOLEDPanel
-    Left = 135
-    Top = -8
+    Left = 117
+    Top = 1
     Width = 105
     Height = 100
     Caption = ''
@@ -115,7 +115,8 @@ object frmMain: TfrmMain
       ButtonColorOn = clBlack
       SliderColor = clWhite
       TextWithSeg7 = False
-      Shape = trLedButton
+      Shape = trKnob
+      OnChanged = OLEDPotentiometer2Changed
       MinValue = 0
       MaxValue = 127
       value = 0
@@ -126,6 +127,52 @@ object frmMain: TfrmMain
       ExplicitTop = 32
       ExplicitWidth = 105
       ExplicitHeight = 105
+    end
+  end
+  object OLEDPanel3: TOLEDPanel
+    AlignWithMargins = True
+    Left = 541
+    Top = 3
+    Width = 80
+    Height = 339
+    Align = alRight
+    Caption = ''
+    RoundRect = 10
+    DoubleBuffered = True
+    Color = 2434341
+    FontSize = 8
+    ExplicitLeft = 544
+    ExplicitTop = 8
+    ExplicitHeight = 329
+    object OLEDPotentiometer3: TOLEDPotentiometer
+      AlignWithMargins = True
+      Left = 15
+      Top = 15
+      Width = 50
+      Height = 309
+      Cursor = crHandPoint
+      Margins.Left = 15
+      Margins.Top = 15
+      Margins.Right = 15
+      Margins.Bottom = 15
+      Align = alClient
+      Color = clNone
+      ParentColor = False
+      Index = 0
+      Caption = 'OLEDPotentiometer3'
+      ButtonColorOff = clBlack
+      ButtonColorOn = clBlack
+      SliderColor = clWhite
+      TextWithSeg7 = False
+      Shape = tkLFO
+      MinValue = 0
+      MaxValue = 127
+      value = 0
+      OverLayR1 = 0
+      OverLayR2 = 0
+      OverLayShape = 0
+      ExplicitLeft = 39
+      ExplicitTop = -89
     end
   end
 end

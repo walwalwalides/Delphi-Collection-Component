@@ -178,6 +178,7 @@ end;
 
 procedure TOLEDShapeBaseImp.OnMouseUp(Sender: TObject;  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
+
   FThumping:=false;
   if not FMouseHasMoved then OnMouseClick(Sender,Button,Shift,X,Y);
   if (Shape = trPitchKnob) and (KnobEditor<>NIL) then
@@ -190,6 +191,7 @@ VAR newValue,d:integer;
 begin
   if FThumping then
   begin
+
     FMouseHasMoved:=true;
     if MouseMoveUseX then d:=X-FThumbStartP.X // default move is left to right
                      else d:=FThumbStartP.Y-Y;// default move is up
@@ -541,6 +543,7 @@ procedure TOLEDElementOLED.Paint;
 
     procedure DrawSlider;
     begin
+
       if OLEDPotentiometer.Width<OLEDPotentiometer.Height then DrawVerSlider
                                             else DrawHorSlider;
     end;
@@ -1034,6 +1037,7 @@ VAR c:TSize;
     const lfosel : array [ 0..3] of string = ('None','LFO1','LFO2','L1+2');
 
 begin
+
   with OLEDPotentiometer do
     case Shape of
       tkNone:  Draw7Segment(Canvas,0,0,Value,true,false);

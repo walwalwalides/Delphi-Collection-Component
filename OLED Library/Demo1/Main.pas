@@ -14,6 +14,8 @@ type
     OLEDPanel2: TOLEDPanel;
     OLEDPotentiometer1: TOLEDPotentiometer;
     OLEDPotentiometer2: TOLEDPotentiometer;
+    OLEDPotentiometer3: TOLEDPotentiometer;
+    OLEDPanel3: TOLEDPanel;
 
     procedure OLEDPotentiometer1Changed(Sender: TObject; index, value: Integer);
     procedure FormCreate(Sender: TObject);

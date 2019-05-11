@@ -27,6 +27,7 @@ function getBitmap(e:eBitmaps):TBitmap;
 function getRotKnob(value:integer):TPngImage;
 
 implementation
+{$R BMPresource.res}
 
 VAR   OLEDBitmapsBmp : array [eBitmaps] of TBitmap;
 (* DON'T REMOVE THIS IT IS NEEDED BY RESOURCE CREATER RH: OLEDBITMAPS *)

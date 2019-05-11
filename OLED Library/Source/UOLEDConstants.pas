@@ -15,7 +15,7 @@ uses
   Vcl.Graphics,ExtCtrls,StdCtrls;
 
 
- // Define Standard Color
+                                         {Define Standard Color}
 const
   clAmber = TColor($004094FF);
   clAliceBlue = TColor($00FFF8F0);
@@ -142,7 +142,7 @@ const
   clWhiteSmoke = TColor($00F5F5F5);
   clYellowGreen = TColor($0032CD9A);
 
-     //Define All Diferent Shape for Knob
+     //Define all diferent electrical Component
 type TOLEDKnobShape = (trKnob,trButton,trSlider,trPitchKnob,trNone,trMidi4,trLedButton,trTextButton,trText,trLed,trTextLine,
                       tkVCOWave,tkLFOWave,tkFoot,tkNoise,tkValue,tkLFO,tkNone,
                       tkSlider,tkSliderMulti,
