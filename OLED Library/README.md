@@ -1,5 +1,5 @@
 # OLED Library
-- Set of Delphi VCL components, classes and routines for control tasks. 
+- Set of Delphi VCL components, classes and routines for Electrical Component. 
 
 ![](OLED-Library.png) 
 
@@ -7,7 +7,7 @@
 
 # Features  
 
-- Design Potentiometer Devices as Component.
+- Design Electrical Component as VCL components.
 - Design Rounded Panel.
 
 
