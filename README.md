@@ -9,5 +9,5 @@
 | File | Contents | 
 | --- | --- |
 | .gitignore | Git ignores the files in this file |
-|OLED Library|Potentiometer+Panel|
+|OLED Library|Potentiometer + Panel|
 | README.md | The readme for this project
