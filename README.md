@@ -9,5 +9,5 @@
 | File | Contents | 
 | --- | --- |
 | .gitignore | Git ignores the files in this file |
-|OLED Library| Electrical Componentl Library|
+|[OLED Library](https://github.com/…/Delphi-Comp…/tree/master/OLED%20Library) - | Electrical Componentl Library|
 | README.md | The readme for this project
