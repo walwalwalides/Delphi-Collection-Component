@@ -17,7 +17,7 @@ object frmMain: TfrmMain
   object lblValue1: TLabel
     Left = 48
     Top = 90
-    Width = 46
+    Width = 39
     Height = 16
     Alignment = taCenter
     Caption = 'Value1'
@@ -31,7 +31,7 @@ object frmMain: TfrmMain
   object lblValue2: TLabel
     Left = 180
     Top = 90
-    Width = 53
+    Width = 39
     Height = 16
     Alignment = taCenter
     Caption = 'Value2'
@@ -72,11 +72,12 @@ object frmMain: TfrmMain
       OnChanged = OLEDPotentiometer1Changed
       MinValue = 0
       MaxValue = 127
-      Value = 0
+      value = 0
       OverLayR1 = 0
       OverLayR2 = 0
       OverLayShape = 0
-      ExplicitTop = 2
+      ExplicitLeft = 27
+      ExplicitTop = 27
     end
   end
   object OLEDPanel2: TOLEDPanel
@@ -113,7 +114,7 @@ object frmMain: TfrmMain
       OnChanged = OLEDPotentiometer2Changed
       MinValue = 0
       MaxValue = 127
-      Value = 0
+      value = 0
       OverLayR1 = 0
       OverLayR2 = 0
       OverLayShape = 0

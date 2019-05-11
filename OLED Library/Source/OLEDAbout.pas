@@ -10,7 +10,7 @@
 
 unit OLEDAbout;
 
-{$I Mixer.inc}
+{$I OLED.inc}
 
 interface
 
@@ -40,7 +40,7 @@ type
 procedure ShowAbout;
 
 const
-  CPortLibraryVersion = '4.11';
+  OLEDLibraryVersion = '1.00';
 
 implementation
 
@@ -57,7 +57,7 @@ end;
 
 procedure TAboutBox.FormCreate(Sender: TObject);
 begin
-  Version.Caption := 'version ' + CPortLibraryVersion;
+  Version.Caption := 'version ' + OLEDLibraryVersion;
 end;
 
 procedure TAboutBox.NewsLblClick(Sender: TObject);
