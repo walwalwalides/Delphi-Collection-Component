@@ -7,7 +7,7 @@
 
 # Features  
 
-- Design Potentiometer Devices as Component.
+- Design Electrical Component as VCL components.
 - Design Rounded Panel.
 
 
