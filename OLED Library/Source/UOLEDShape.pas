@@ -16,7 +16,7 @@ uses System.SysUtils, System.Classes, Messages, Vcl.Controls, Vcl.ExtCtrls, Vcl.
 { interface.interface }
 type TOLEDProcChanged = reference to procedure (sender:TObject; newvalue:integer);
 
-  TRMCShape = class
+  TOLEDShape = class
   procedure Paint; virtual;abstract;
   procedure SetValue(aValue:integer);virtual;abstract;
   procedure OnMouseDown(Sender:TObject;  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);virtual;abstract;
@@ -28,7 +28,7 @@ type TOLEDProcChanged = reference to procedure (sender:TObject; newvalue:integer
 
 end;
 
-function CreateShape(owner:TComponent;shape:TOLEDKnobShape;procChanged:TOLEDProcChanged):TRMCShape;
+function CreateShape(owner:TComponent;shape:TOLEDKnobShape;procChanged:TOLEDProcChanged):TOLEDShape;
 
 implementation
 
@@ -37,7 +37,7 @@ implementation
 uses UOLEDControls, Windows,Math,Dialogs,UOLEDBitmaps,UOLED7Segment,Vcl.Imaging.pngimage;
 type   TVCLBitmap = Vcl.Graphics.TBitmap;
        ArrayOfInteger = TArray<integer>;
-TRMCShapeBaseImp = class (TRMCShape)
+TOLEDShapeBaseImp = class (TOLEDShape)
   private
       FThumbStartP:TPoint;
       FThumbStartValue:integer;
@@ -64,7 +64,7 @@ TRMCShapeBaseImp = class (TRMCShape)
       procedure Line(x1, y1, x2, y2: extended);
 end;
 
-    TRMCTwinkle = class (TRMCShapeBaseImp)
+    TOLEDTwinkle = class (TOLEDShapeBaseImp)
   private
       FLightColor:TColor;
       FTimer:TTimer;
@@ -82,31 +82,31 @@ end;
       procedure SetAttributeValue(msg, value :integer);override;
     end;
 
-    TRMCSunrise = class (TRMCShapeBaseImp)
+    TOLEDSunrise = class (TOLEDShapeBaseImp)
   private
       procedure Paint;override;
   public
     end;
 
     TOnOwnerDraw = procedure (Sender:TOLEDPotentiometer) of object;
-    TRMCOwnerDraw = class (TRMCShapeBaseImp)
+    TOLEDOwnerDraw = class (TOLEDShapeBaseImp)
   private
       procedure Paint;override;
   public
       OnOwnerDraw:TOnOwnerDraw;
     end;
 
-   TRMCElementRMC = class(TRMCShapeBaseImp)
+   TRMCElementRMC = class(TOLEDShapeBaseImp)
      function RMCMouseRange(defvalue: integer): integer;
      procedure Paint;override;
   end;
-   TRMCElementVA = class(TRMCShapeBaseImp)
+   TOLEDElementVA = class(TOLEDShapeBaseImp)
      procedure KnobPaint(w,h,mx,my,r1,r2:integer;getBitmap:TVCLBitmap; count:integer;values:ArrayOfInteger);
      procedure Paint;override;
      procedure DefaultWH(VAR w,h:integer);override;
   end;
 
-   TRMCElementRol = class(TRMCShapeBaseImp)
+   TOLEDElementRol = class(TOLEDShapeBaseImp)
 
   private
      FSaveValue:integer;
@@ -138,20 +138,20 @@ begin
   end;
 end;
 
-function CreateShape(owner:TComponent;shape:TOLEDKnobShape;procChanged:TOLEDProcChanged):TRMCShape;
+function CreateShape(owner:TComponent;shape:TOLEDKnobShape;procChanged:TOLEDProcChanged):TOLEDShape;
 begin
   case RMCStyle(shape) of
     tsRMC:    result:=TRMCElementRMC.Create(owner,shape,procChanged);
-    tsRoland: result:=TRMCElementRol.Create(owner,shape,procChanged);
-    tsVASynth:result:=TRMCElementVA.Create(owner,shape,procChanged);
-    tsTwinkle: result:=TRMCTwinkle.Create(owner,shape,procChanged);
-    tsSunrise: result:=TRMCSunrise.Create(owner,shape,procChanged);
-    tsOwnerDraw: result:=TRMCOwnerDraw.Create(owner,shape,procChanged);
+    tsRoland: result:=TOLEDElementRol.Create(owner,shape,procChanged);
+    tsVASynth:result:=TOLEDElementVA.Create(owner,shape,procChanged);
+    tsTwinkle: result:=TOLEDTwinkle.Create(owner,shape,procChanged);
+    tsSunrise: result:=TOLEDSunrise.Create(owner,shape,procChanged);
+    tsOwnerDraw: result:=TOLEDOwnerDraw.Create(owner,shape,procChanged);
     tsError:  result:=NIL;
   end;
 end;
 
-constructor TRMCShapeBaseImp.Create(owner: TComponent;shape:TOLEDKnobShape;procChanged:TOLEDProcChanged);
+constructor TOLEDShapeBaseImp.Create(owner: TComponent;shape:TOLEDKnobShape;procChanged:TOLEDProcChanged);
 begin
 //  inherited Create(NIL);
   OLEDPotentiometer:=TOLEDPotentiometer(owner);
@@ -161,22 +161,22 @@ begin
   Init;
 end;
 
-procedure TRMCShapeBaseImp.DefaultWH(var w, h: integer);
+procedure TOLEDShapeBaseImp.DefaultWH(var w, h: integer);
 begin
 
 end;
 
-procedure TRMCShapeBaseImp.Init;
+procedure TOLEDShapeBaseImp.Init;
 begin
 
 end;
 
-function TRMCShapeBaseImp.KnobEditor: TKnobEditor;
+function TOLEDShapeBaseImp.KnobEditor: TKnobEditor;
 begin
   result:=OLEDPotentiometer.KnobEditor;
 end;
 
-procedure TRMCShapeBaseImp.OnMouseUp(Sender: TObject;  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+procedure TOLEDShapeBaseImp.OnMouseUp(Sender: TObject;  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
   FThumping:=false;
   if not FMouseHasMoved then OnMouseClick(Sender,Button,Shift,X,Y);
@@ -185,7 +185,7 @@ begin
 
 end;
 
-procedure TRMCShapeBaseImp.OnMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
+procedure TOLEDShapeBaseImp.OnMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
 VAR newValue,d:integer;
 begin
   if FThumping then
@@ -210,17 +210,17 @@ begin
   end;
 end;
 
-procedure TRMCShapeBaseImp.SetAttributeValue(msg, value:integer);
+procedure TOLEDShapeBaseImp.SetAttributeValue(msg, value:integer);
 begin
 
 end;
 
-procedure TRMCShapeBaseImp.SetValue(aValue: integer);
+procedure TOLEDShapeBaseImp.SetValue(aValue: integer);
 begin
   Value:=aValue;
 end;
 
-procedure TRMCShapeBaseImp.StartMouseKnob(X,Y,knob:integer);
+procedure TOLEDShapeBaseImp.StartMouseKnob(X,Y,knob:integer);
 begin
   FThumbStartP:=Point(X,Y);
   FThumbStartValue:=Value;
@@ -229,17 +229,17 @@ begin
 end;
 
 
-function TRMCShapeBaseImp.MouseMoveUseX:boolean;
+function TOLEDShapeBaseImp.MouseMoveUseX:boolean;
 begin
   result:=false;
 end;
 
-function TRMCShapeBaseImp.MouseInvert: boolean;
+function TOLEDShapeBaseImp.MouseInvert: boolean;
 begin
   result:=false;
 end;
 
-function TRMCShapeBaseImp.MouseRange: integer;
+function TOLEDShapeBaseImp.MouseRange: integer;
 begin
   if OLEDPotentiometer.maxValue - OLEDPotentiometer.minValue > 5 then
     result:=200
@@ -247,7 +247,7 @@ begin
     result:=100;
 end;
 
-procedure TRMCShapeBaseImp.OnMouseDown(Sender:TObject;  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+procedure TOLEDShapeBaseImp.OnMouseDown(Sender:TObject;  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
   function CalcMidi(value:integer):integer;
   VAR midi:integer;
   begin
@@ -296,7 +296,7 @@ begin
 end;
 
 
-function TRMCShapeBaseImp.CalcButtonColor:TColor;
+function TOLEDShapeBaseImp.CalcButtonColor:TColor;
 begin
   if Value<>0 then result:=OLEDPotentiometer.ButtonColorOn else result:=OLEDPotentiometer.ButtonColorOff;
   if (result=clNone) or not OLEDPotentiometer.Visible then result:=OLEDPotentiometer.BackColor;
@@ -318,9 +318,9 @@ begin
   result:=round(r*sin(pi*alpha / 180));
 end;
 
-{ TRMCTwinkle }
+{ TOLEDTwinkle }
 
-procedure TRMCTwinkle.Init;
+procedure TOLEDTwinkle.Init;
 begin
   inherited;
   FTimer:=TTimer.Create(NIL);
@@ -332,7 +332,7 @@ begin
   FPaintPosition:=0;
 end;
 
-procedure TRMCTwinkle.Paint;
+procedure TOLEDTwinkle.Paint;
 VAR cl:TColor;
      r:Trect;
 begin
@@ -350,7 +350,7 @@ begin
   PaintInner;
 end;
 
-procedure TRMCTwinkle.PaintInner;
+procedure TOLEDTwinkle.PaintInner;
 VAR cl:TColor;
      r:Trect;
 begin
@@ -368,7 +368,7 @@ end;
 
 function RGB(r,g,b:integer):integer;begin result:= b SHL 16 + g SHL 8 + r; end;
 
-function TRMCTwinkle.CalcColor:TColor;
+function TOLEDTwinkle.CalcColor:TColor;
 VAR x:double;
     r,g,b,fx:integer;
 begin
@@ -379,7 +379,7 @@ begin
            else result:=RGB(fx,fx,fx DIV 3);             // light yellow = rgb(255,255,102)
 end;
 
-function TRMCTwinkle.NextPosition:boolean;
+function TOLEDTwinkle.NextPosition:boolean;
 VAR newPosition:integer;
 begin
   newPosition:=FPaintPosition+FSpeed;
@@ -392,7 +392,7 @@ begin
   FLightColor:=CalcColor;
 end;
 
-function TRMCTwinkle.PrevPosition:boolean;
+function TOLEDTwinkle.PrevPosition:boolean;
 VAR newPosition:integer;
 begin
   newPosition:=FPaintPosition-FSpeed;
@@ -403,7 +403,7 @@ begin
 end;
 
 
-procedure TRMCTwinkle.TwinkleTimer(Sender:TObject);
+procedure TOLEDTwinkle.TwinkleTimer(Sender:TObject);
 begin
   if Value>0 then FTimer.Enabled:=NextPosition
              else FTimer.Enabled:=PrevPosition;
@@ -412,19 +412,19 @@ begin
   FOwnInvalidate:=false;
 end;
 
-procedure TRMCTwinkle.SetAttributeValue(msg,value:integer);
+procedure TOLEDTwinkle.SetAttributeValue(msg,value:integer);
 begin
   if msg = RMCMSG_TWINKLESPEED then
     FSpeed:=value;
 end;
 
-procedure TRMCTwinkle.SetValue(aValue: integer);
+procedure TOLEDTwinkle.SetValue(aValue: integer);
 begin
   inherited;
   FTimer.Enabled:=true;
 end;
 
-procedure TRMCShapeBaseImp.Line(x1, y1, x2, y2: extended);
+procedure TOLEDShapeBaseImp.Line(x1, y1, x2, y2: extended);
 begin
   with OLEDPotentiometer.Canvas do
   begin
@@ -433,7 +433,7 @@ begin
   end;
 end;
 
-function TRMCElementRol.MouseInvert: boolean;
+function TOLEDElementRol.MouseInvert: boolean;
 begin
   result:=(Shape=tkVCOWave) or (Shape = tkLFO) ;
 end;
@@ -446,7 +446,7 @@ begin
     result:=100;
 end;
 
-function TRMCElementRol.MouseRange: integer;
+function TOLEDElementRol.MouseRange: integer;
 begin
   if MouseMoveUseX then result:=OLEDPotentiometer.Width
                    else result:=OLEDPotentiometer.Height;
@@ -739,12 +739,12 @@ begin
 end;
 
 
-function TRMCElementRol.MouseMoveUseX: boolean;
+function TOLEDElementRol.MouseMoveUseX: boolean;
 begin
   result:= ((shape = tkSlider) or (shape = tkSliderMulti) ) and (OLEDPotentiometer.Width>OLEDPotentiometer.Height);
 end;
 
-procedure TRMCElementRol.Paint;
+procedure TOLEDElementRol.Paint;
 begin
   if OLEDPotentiometer.TextWithSeg7 then RolandTextPaint
   else
@@ -761,9 +761,9 @@ begin
   end;
 end;
 
-{ TRMCElementVA }
+{ TOLEDElementVA }
 
-procedure TRMCElementVA.DefaultWH(var w, h: integer);
+procedure TOLEDElementVA.DefaultWH(var w, h: integer);
 begin
   w:=79;
   h:=52;
@@ -773,7 +773,7 @@ begin
   end;
 end;
 
-procedure TRMCElementVA.Paint;
+procedure TOLEDElementVA.Paint;
 VAR bdefault:TVCLBitmap;
 begin
   bdefault:=NIL;
@@ -792,7 +792,7 @@ tvWaveShape4: bdefault:=getBitmap(BmpRMCVAWAVE4);
               KnobPaint(79,52,37,28,8,20,bdefault,4,ArrayOfInteger.Create(270-36,270-2*36,270-3*36,270-4*36));
 end;
 
-procedure TRMCElementVA.KnobPaint(w,h,mx,my,r1,r2:integer;getBitmap:TVCLBitmap; count:integer;values:ArrayOfInteger);
+procedure TOLEDElementVA.KnobPaint(w,h,mx,my,r1,r2:integer;getBitmap:TVCLBitmap; count:integer;values:ArrayOfInteger);
     function calcAngle(value:integer):integer;
     begin
       if count = 0 then
@@ -835,7 +835,7 @@ begin
   bmp2.Free;
 end;
 
-procedure TRMCElementRol.RolandKnobPaint;
+procedure TOLEDElementRol.RolandKnobPaint;
     function dx(r,alpha:integer):integer;
     begin
       result:=round(r*cos(pi*alpha / 180));
@@ -911,7 +911,7 @@ begin
      DrawPanel(87);
 end;
 
-procedure TRMCElementRol.RolandVSliderPaint;
+procedure TOLEDElementRol.RolandVSliderPaint;
 VAR bmb,bmu,bms:TVCLBitmap;
     h,hu,huCount,hs,h2,hb,i,t,w2,y:integer;
     fy:single;
@@ -949,7 +949,7 @@ begin
   end;
 end;
 
-procedure TRMCElementRol.RolandHSliderPaint;
+procedure TOLEDElementRol.RolandHSliderPaint;
 VAR bmb,bmu,bms:TVCLBitmap;
     w,wu,wuCount,ws,w2,x,wb,i,l,h2:integer;
     fx:single;
@@ -986,7 +986,7 @@ begin
 end;
 
 
-procedure TRMCElementRol.OnMouseClick(Sender: TObject; Button: TMouseButton;Shift: TShiftState; X,  Y: Integer);
+procedure TOLEDElementRol.OnMouseClick(Sender: TObject; Button: TMouseButton;Shift: TShiftState; X,  Y: Integer);
 begin
   with OLEDPotentiometer do
   begin
@@ -1024,7 +1024,7 @@ begin
 end;
 
 
-procedure TRMCElementRol.RolandTextPaint;
+procedure TOLEDElementRol.RolandTextPaint;
 VAR c:TSize;
     cl:TColor;
     r:TRect;
@@ -1065,9 +1065,9 @@ begin
     end;
 end;
 
-{ TRMCShape }
+{ TOLEDShape }
 
-procedure TRMCShape.OnMouseClick(Sender: TObject; Button: TMouseButton;  Shift: TShiftState; X, Y: Integer);
+procedure TOLEDShape.OnMouseClick(Sender: TObject; Button: TMouseButton;  Shift: TShiftState; X, Y: Integer);
 begin
 end;
 
@@ -1096,9 +1096,9 @@ begin
 end;
 
 
-{ TRMCSunrise }
+{ TOLEDSunrise }
 
-procedure TRMCSunrise.Paint;
+procedure TOLEDSunrise.Paint;
 VAR bm:TVCLBitmap;
     x,y,w,h,t:integer;
 begin
@@ -1106,7 +1106,7 @@ begin
     tsButton: with OLEDPotentiometer,Canvas do
               begin
                 if value=0 then bm:=getBitmap(BmpSunriseButOff) else bm:=getBitmap(BmpSunriseButOn);
-                if SliderColor=clBlack then bm:=getBitmap(BmpSunriseButFull);
+                if (SliderColor=clBlack) then bm:=getBitmap(BmpSunriseButFull);
                 StretchDraw(Rect(0,0,Width,Height),bm);
               end;
     tsLed:   with OLEDPotentiometer,Canvas do
@@ -1140,7 +1140,7 @@ end;
 
 { TRMCArp }
 
-procedure TRMCOwnerDraw.Paint;
+procedure TOLEDOwnerDraw.Paint;
 begin
    if assigned(OLEDPotentiometer.OnSomething) then OLEDPotentiometer.OnSomething(OLEDPotentiometer);
 end;

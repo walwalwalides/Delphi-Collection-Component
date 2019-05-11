@@ -73,7 +73,7 @@ type
      FDiscreteIndex:integer;
      FOverlayR1, FOverlayR2,FOverlayShape:integer;
 //     FOptions:TOptions;
-     FRMCShape:TRMCShape;
+     FRMCShape:TOLEDShape;
      FOnChanged:TOnChanged;
      FKnobEditor:TKnobEditor;
      FonBeforePaint: TonBeforePaint ;

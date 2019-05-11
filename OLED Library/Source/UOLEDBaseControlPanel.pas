@@ -12,7 +12,7 @@ unit UOLEDBaseControlPanel;
 interface
 
 uses
-  System.SysUtils, System.Classes, Windows, Messages, Vcl.Controls, Vcl.Forms,Vcl.Graphics,Types,UOLEDEmptyPanel,UOLEDControls, UOLEDKNOB,UOLEDConstants, Generics.Collections ;
+  System.SysUtils, System.Classes, Windows, Messages, Vcl.Controls, Vcl.Forms,Vcl.Graphics,Types,UOLEDPanel,UOLEDControls, UOLEDKNOB,UOLEDConstants, Generics.Collections ;
 
 type
   TonClicked  = procedure (Sender:TObject;index,value:integer) of object;
@@ -475,8 +475,8 @@ end;
 procedure TOLEDBaseControlPanelCustom.SetCaption(value: string);
 begin
   FCaption:=value;
-  if (BasePanel is  TOLEDEmptyPanel)
-    then TOLEDEmptyPanel(BasePanel).Caption:=value;
+  if (BasePanel is  TOLEDPanel)
+    then TOLEDPanel(BasePanel).Caption:=value;
 end;
 
 initialization
