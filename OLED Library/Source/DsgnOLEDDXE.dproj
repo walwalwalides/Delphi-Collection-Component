@@ -81,11 +81,11 @@
         <BT_BuildType>Debug</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
-        <DCC_UsePackage>MixerLibDXE;OLEDLibDXE;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>OLEDLibDXE;OLEDLibDXE;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DCC_UsePackage>vcl;MixerLibDXE;OLEDLibDXE;$(DCC_UsePackage)</DCC_UsePackage>
-        <Icon_MainIcon>MixerLib.ico</Icon_MainIcon>
+        <DCC_UsePackage>vcl;OLEDLibDXE;OLEDLibDXE;$(DCC_UsePackage)</DCC_UsePackage>
+        <Icon_MainIcon>OLEDLib.ico</Icon_MainIcon>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -93,7 +93,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>vcl;$(DCC_UsePackage)</DCC_UsePackage>
-        <Icon_MainIcon>MixerLib.ico</Icon_MainIcon>
+        <Icon_MainIcon>OLEDLib.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_DebugInformation>0</DCC_DebugInformation>
