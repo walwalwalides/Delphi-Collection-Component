@@ -9,9 +9,6 @@
         <Projects Include="DsgnOLEDDXE.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\Demo1\DisplayOLED.dproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -38,23 +35,14 @@
     <Target Name="DsgnOLEDDXE:Make">
         <MSBuild Projects="DsgnOLEDDXE.dproj" Targets="Make"/>
     </Target>
-    <Target Name="DisplayOLED">
-        <MSBuild Projects="..\Demo1\DisplayOLED.dproj"/>
-    </Target>
-    <Target Name="DisplayOLED:Clean">
-        <MSBuild Projects="..\Demo1\DisplayOLED.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="DisplayOLED:Make">
-        <MSBuild Projects="..\Demo1\DisplayOLED.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="OLEDLibDXE;DsgnOLEDDXE;DisplayOLED"/>
+        <CallTarget Targets="OLEDLibDXE;DsgnOLEDDXE"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="OLEDLibDXE:Clean;DsgnOLEDDXE:Clean;DisplayOLED:Clean"/>
+        <CallTarget Targets="OLEDLibDXE:Clean;DsgnOLEDDXE:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="OLEDLibDXE:Make;DsgnOLEDDXE:Make;DisplayOLED:Make"/>
+        <CallTarget Targets="OLEDLibDXE:Make;DsgnOLEDDXE:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
