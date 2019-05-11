@@ -15,8 +15,8 @@ uses
   Winapi.Windows, System.SysUtils,  System.Classes, Vcl.Graphics, Vcl.Imaging.pngimage;
 
 (* DON'T REMOVE THIS IT IS NEEDED BY RESOURCE CREATER RH: EBITMAPS *)
-type  eBitmaps = (Bmpdunebutton,Bmpduneosc,BmpRMC7Led,BmpRMCButton,BmpRMCFoot4,BmpRMCKnob,BmpRMCKnob2,BmpRMCVAFoot,BmpRMCVAFOOT4,BmpRMCVAKnob,BmpRMCVALFO,
-          BmpRMCVALFO1,BmpRMCVALFO2,BmpRMCVALFOSEL,BmpRMCVAWave,BmpRMCVAWave4,BmpRMCWave,BmpRolandHSlider,BmpRolandKnob,BmpRolandVSlider,BmpSliderHorBot,
+type  eBitmaps = (Bmpdunebutton,Bmpduneosc,BmpOLED7Led,BmpOLEDButton,BmpOLEDFoot4,BmpOLEDKnob,BmpOLEDKnob2,BmpOLEDVAFoot,BmpOLEDVAFOOT4,BmpOLEDVAKnob,BmpOLEDVALFO,
+          BmpOLEDVALFO1,BmpOLEDVALFO2,BmpOLEDVALFOSEL,BmpOLEDVAWave,BmpOLEDVAWave4,BmpOLEDWave,BmpRolandHSlider,BmpRolandKnob,BmpRolandVSlider,BmpSliderHorBot,
           BmpSliderHorUpp,BmpSliderVerBot,BmpSliderVerUpp,BmpSunriseButFull,BmpSunriseButOff,BmpSunriseButOn,BmpSunriseKnob,BmpSunriseLedOff,BmpSunriseLedOn,
           BmpSunriseNoise,BmpSunriseSaw,BmpSunriseSin,BmpSunriseSlider,BmpSunriseSliderKnob,BmpSunriseSquare,BmpSunriseTri,BmpTRANBUTTON0,BmpTRANBUTTON1
 
@@ -28,24 +28,24 @@ function getRotKnob(value:integer):TPngImage;
 
 implementation
 
-VAR   RMCBitmapsBmp : array [eBitmaps] of TBitmap;
-(* DON'T REMOVE THIS IT IS NEEDED BY RESOURCE CREATER RH: RMCBITMAPS *)
-const RMCBitmapNames : array[eBitmaps] of string =('DUNEBUTTON','DUNEOSC','RMC7LED','RMCBUTTON','RMCFOOT4','RMCKNOB','RMCKNOB2','RMCVAFOOT','RMCVAFOOT4',
-          'RMCVAKNOB','RMCVALFO','RMCVALFO1','RMCVALFO2','RMCVALFOSEL','RMCVAWAVE','RMCVAWAVE4','RMCWAVE','ROLANDHSLIDER','ROLANDKNOB','ROLANDVSLIDER',
+VAR   OLEDBitmapsBmp : array [eBitmaps] of TBitmap;
+(* DON'T REMOVE THIS IT IS NEEDED BY RESOURCE CREATER RH: OLEDBITMAPS *)
+const OLEDBitmapNames : array[eBitmaps] of string =('DUNEBUTTON','DUNEOSC','OLED7LED','OLEDBUTTON','OLEDFOOT4','OLEDKNOB','OLEDKNOB2','OLEDVAFOOT','OLEDVAFOOT4',
+          'OLEDVAKNOB','OLEDVALFO','OLEDVALFO1','OLEDVALFO2','OLEDVALFOSEL','OLEDVAWAVE','OLEDVAWAVE4','OLEDWAVE','ROLANDHSLIDER','ROLANDKNOB','ROLANDVSLIDER',
           'SLIDERHORBOT','SLIDERHORUPP','SLIDERVERBOT','SLIDERVERUPP','SUNRISEBUTFULL','SUNRISEBUTOFF','SUNRISEBUTON','SUNRISEKNOB','SUNRISELEDOFF',
           'SUNRISELEDON','SUNRISENOISE','SUNRISESAW','SUNRISESIN','SUNRISESLIDER','SUNRISESLIDERKNOB','SUNRISESQUARE','SUNRISETRI','TRANBUTTON0','TRANBUTTON1'
 );
-(* DON'T REMOVE THIS IT IS NEEDED BY RESOURCE CREATER RH: _RMCBITMAPS *)
+(* DON'T REMOVE THIS IT IS NEEDED BY RESOURCE CREATER RH: _OLEDBITMAPS *)
 
 
 function getBitmap(e:eBitmaps):TBitmap;
 begin
-  if RMCBitmapsBmp[e]<>NIL then result:=RMCBitmapsBmp[e]
+  if OLEDBitmapsBmp[e]<>NIL then result:=OLEDBitmapsBmp[e]
   else
   begin
-     RMCBitmapsBmp[e]:=TBitmap.Create;
-     RMCBitmapsBmp[e].LoadFromResourceName(HInstance, RMCBitmapNames[e]);
-     result:=RMCBitmapsBmp[e];
+     OLEDBitmapsBmp[e]:=TBitmap.Create;
+     OLEDBitmapsBmp[e].LoadFromResourceName(HInstance, OLEDBitmapNames[e]);
+     result:=OLEDBitmapsBmp[e];
   end
 end;
 

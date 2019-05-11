@@ -96,8 +96,8 @@ end;
       OnOwnerDraw:TOnOwnerDraw;
     end;
 
-   TRMCElementRMC = class(TOLEDShapeBaseImp)
-     function RMCMouseRange(defvalue: integer): integer;
+   TOLEDElementOLED = class(TOLEDShapeBaseImp)
+     function OLEDMouseRange(defvalue: integer): integer;
      procedure Paint;override;
   end;
    TOLEDElementVA = class(TOLEDShapeBaseImp)
@@ -125,10 +125,10 @@ end;
 
 { implementation.implementation }
 
-function RMCStyle(shape:TOLEDKnobShape): TRMCStyle;
+function OLEDStyle(shape:TOLEDKnobShape): TOLEDStyle;
 begin
   case shape of
-    trKnob,trButton,trSlider,trNone,trMidi4,trLedButton,trTextButton,trText,trLed,trTextLine,trPitchKnob:result:=tsRMC;
+    trKnob,trButton,trSlider,trNone,trMidi4,trLedButton,trTextButton,trText,trLed,trTextLine,trPitchKnob:result:=tsOLED;
     tkVCOWave,tkLFOWave,tkFoot,tkNoise,tkValue,tkNone,tkLFO,tkSlider,tkSliderMulti: result:=tsRoland;
     tvWave,tvFoot,tvKnob,tvLFO, tvLFOSel, tvWaveFoot4, tvWaveShape4,tvLOF1, tvLFO2: result:=tsVASynth;
     trTwinkle: result:=tsTwinkle;
@@ -140,8 +140,8 @@ end;
 
 function CreateShape(owner:TComponent;shape:TOLEDKnobShape;procChanged:TOLEDProcChanged):TOLEDShape;
 begin
-  case RMCStyle(shape) of
-    tsRMC:    result:=TRMCElementRMC.Create(owner,shape,procChanged);
+  case OLEDStyle(shape) of
+    tsOLED:    result:=TOLEDElementOLED.Create(owner,shape,procChanged);
     tsRoland: result:=TOLEDElementRol.Create(owner,shape,procChanged);
     tsVASynth:result:=TOLEDElementVA.Create(owner,shape,procChanged);
     tsTwinkle: result:=TOLEDTwinkle.Create(owner,shape,procChanged);
@@ -414,7 +414,7 @@ end;
 
 procedure TOLEDTwinkle.SetAttributeValue(msg,value:integer);
 begin
-  if msg = RMCMSG_TWINKLESPEED then
+  if msg = OLEDMSG_TWINKLESPEED then
     FSpeed:=value;
 end;
 
@@ -438,7 +438,7 @@ begin
   result:=(Shape=tkVCOWave) or (Shape = tkLFO) ;
 end;
 
-function TRMCElementRMC.RMCMouseRange(defvalue:integer): integer;
+function TOLEDElementOLED.OLEDMouseRange(defvalue:integer): integer;
 begin
   if OLEDPotentiometer.maxValue - OLEDPotentiometer.minValue > 5 then
     result:=200
@@ -452,7 +452,7 @@ begin
                    else result:=OLEDPotentiometer.Height;
 end;
 
-procedure TRMCElementRMC.Paint;
+procedure TOLEDElementOLED.Paint;
     procedure DrawKnob;
     VAR r:TRect;
         alpha,r1,r2,xm,ym:integer;
@@ -461,7 +461,7 @@ procedure TRMCElementRMC.Paint;
       with OLEDPotentiometer,Canvas do
       begin
         r:=Rect(0,0,Width,Height);
-        bm:=getBitmap(BmpRMCKnob);
+        bm:=getBitmap(BmpOLEDKnob);
         bm.transparent:=true;
         StretchDraw(r,bm);
         alpha:=240-300*(Value-minValue) DIV (maxValue-minValue);
@@ -778,15 +778,15 @@ VAR bdefault:TVCLBitmap;
 begin
   bdefault:=NIL;
   case Shape of
-      tvWave: KnobPaint(79,52,37,28,8,20,getBitmap(BmpRMCVAWave),8,ArrayOfInteger.Create(225,195,165,135,45,15,-15,-45));
-      tvFoot: KnobPaint(67,60,33,34,8,20,getBitmap(BmpRMCVAFoot),7,ArrayOfInteger.Create(225,180,135,90,45,0,-45));
-      tvKnob: KnobPaint(66,57,34,34,13,16,getBitmap(BmpRMCVAKnob),0,NIL);
-      tvLFO : KnobPaint(79,52,37,28,8,20,getBitmap(BmpRMCVALFO),4,ArrayOfInteger.Create(225,135,45,-45));
-    tvLFOSel: bdefault:=getBitmap(BmpRMCVALFOSEL);
-    tvWaveFoot4: bdefault:=getBitmap(BmpRMCVAFoot4);
-tvWaveShape4: bdefault:=getBitmap(BmpRMCVAWAVE4);
-      tvLOF1: bdefault:=getBitmap(BmpRMCVALFO1);
-      tvLFO2: bdefault:=getBitmap(BmpRMCVALFO2);
+      tvWave: KnobPaint(79,52,37,28,8,20,getBitmap(BmpOLEDVAWave),8,ArrayOfInteger.Create(225,195,165,135,45,15,-15,-45));
+      tvFoot: KnobPaint(67,60,33,34,8,20,getBitmap(BmpOLEDVAFoot),7,ArrayOfInteger.Create(225,180,135,90,45,0,-45));
+      tvKnob: KnobPaint(66,57,34,34,13,16,getBitmap(BmpOLEDVAKnob),0,NIL);
+      tvLFO : KnobPaint(79,52,37,28,8,20,getBitmap(BmpOLEDVALFO),4,ArrayOfInteger.Create(225,135,45,-45));
+    tvLFOSel: bdefault:=getBitmap(BmpOLEDVALFOSEL);
+    tvWaveFoot4: bdefault:=getBitmap(BmpOLEDVAFoot4);
+tvWaveShape4: bdefault:=getBitmap(BmpOLEDVAWAVE4);
+      tvLOF1: bdefault:=getBitmap(BmpOLEDVALFO1);
+      tvLFO2: bdefault:=getBitmap(BmpOLEDVALFO2);
   end;
   if bdefault<>NIL then
               KnobPaint(79,52,37,28,8,20,bdefault,4,ArrayOfInteger.Create(270-36,270-2*36,270-3*36,270-4*36));
@@ -1071,7 +1071,7 @@ procedure TOLEDShape.OnMouseClick(Sender: TObject; Button: TMouseButton;  Shift:
 begin
 end;
 
-{ TRMCOverlay }
+{ TOLEDOverlay }
 
 procedure ColorToRGB(const Color: Integer; out R, G, B: integer);
 	begin
@@ -1097,6 +1097,7 @@ end;
 
 
 { TOLEDSunrise }
+
 
 procedure TOLEDSunrise.Paint;
 VAR bm:TVCLBitmap;
@@ -1138,7 +1139,7 @@ begin
   end;
 end;
 
-{ TRMCArp }
+{ TOLEDArp }
 
 procedure TOLEDOwnerDraw.Paint;
 begin

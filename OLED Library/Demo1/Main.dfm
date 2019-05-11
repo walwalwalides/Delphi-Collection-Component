@@ -54,11 +54,15 @@ object frmMain: TfrmMain
     FontSize = 8
     object OLEDPotentiometer1: TOLEDPotentiometer
       AlignWithMargins = True
-      Left = 3
-      Top = 3
-      Width = 123
-      Height = 91
+      Left = 15
+      Top = 15
+      Width = 99
+      Height = 67
       Cursor = crHandPoint
+      Margins.Left = 15
+      Margins.Top = 15
+      Margins.Right = 15
+      Margins.Bottom = 15
       Align = alClient
       Color = clNone
       ParentColor = False
@@ -76,8 +80,8 @@ object frmMain: TfrmMain
       OverLayR1 = 0
       OverLayR2 = 0
       OverLayShape = 0
-      ExplicitLeft = 27
-      ExplicitTop = 27
+      ExplicitLeft = 18
+      ExplicitTop = 8
     end
   end
   object OLEDPanel2: TOLEDPanel

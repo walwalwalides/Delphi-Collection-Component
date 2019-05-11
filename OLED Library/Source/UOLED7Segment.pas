@@ -83,7 +83,7 @@ begin
   begin
     xoff:=12*ord(DrawNegative);
     r:=Rect(x+xoff,y,x+53-xoff,y+33);
-    bm:=getBitmap(BmpRMC7Led);
+    bm:=getBitmap(BmpOLED7Led);
     bm.transparent:=true;
     if DrawBorder then StretchDraw(r,bm);
     inc(x,8+xoff);

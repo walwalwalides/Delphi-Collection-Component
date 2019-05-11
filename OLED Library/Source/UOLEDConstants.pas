@@ -12,33 +12,10 @@ unit UOLEDConstants;
 interface
 
 uses
-  Vcl.Graphics,ExtCtrls,StdCtrls; //,URMCEmptyPanel; // pittige design flow!
+  Vcl.Graphics,ExtCtrls,StdCtrls;
 
-const RMCSEQ_PITCH  = 1;
-const RMCSEQ_FILTER  = 9;
-const RMCSEQ_VOLUME  = 17;
-const RMCSEQ_STEP  = 25;
-const RMCSEQ_MIDI   = 34;
-const RMCSEQ_LINK = 36;
-const RMCSEQ_CHAIN12 = 37;
-const RMCSEQ_PLAY = 38;
-const RMCSEQ_MASTERFINE = 39;
-const RMCSEQ_TEMPO = 40;
-const RMCSEQ_VCFDEPTH = 41;
-const RMCSEQ_VCADEPTH = 42;
-const RMCSEQ_COURSE = 43;
-const RMCSEQ_RANDOM = 44;
-const RMCSEQ_CHAINALL = 45;
-const RMCSEQ_STEPTEXT = 48;
-const RMCSEQ_INSTRVOLUME = 49; // .. 52
 
-const RMCSEQ_TEMPO_TEXT = 81;
-const RMCSEQ_TEMPO_LED = 82;
-const RMCSEQ_CURRSTEP       = 83;
-const RMCSEQ_LASTSTEP       = 84;
-const RMCSEQ_SHOWCHANNEL  = 85;
-const RMCSEQ_CURRSTEPORLASTSTEP  = 86;
-
+ // Define Standard Color
 const
   clAmber = TColor($004094FF);
   clAliceBlue = TColor($00FFF8F0);
@@ -165,24 +142,23 @@ const
   clWhiteSmoke = TColor($00F5F5F5);
   clYellowGreen = TColor($0032CD9A);
 
-
+     //Define All Diferent Shape for Knob
 type TOLEDKnobShape = (trKnob,trButton,trSlider,trPitchKnob,trNone,trMidi4,trLedButton,trTextButton,trText,trLed,trTextLine,
-                      tkVCOWave,tkLFOWave,tkFoot,tkNoise,tkValue,tkLFO,tkNone,  // careful: There is a mapping bteween this and MidiMapping in UVirtCC
+                      tkVCOWave,tkLFOWave,tkFoot,tkNoise,tkValue,tkLFO,tkNone,
                       tkSlider,tkSliderMulti,
                       tvKnob,tvWave,tvFoot,tvLFO, tvLFOSel, tvWaveFoot4, tvWaveShape4,tvLOF1, tvLFO2, trTwinkle,
                       tsKnob,tsButton,tsSlider,tsLed,
                       toOwnerDraw
                       );
-     TRMCStyle = (tsRMC, tsRoland,tsVASynth,tsTwinkle,tsSunrise,tsOwnerDraw,tsError);
+     TOLEDStyle = (tsOLED, tsRoland,tsVASynth,tsTwinkle,tsSunrise,tsOwnerDraw,tsError);
 
 
-const RMCMSG_TWINKLESPEED = 1;
-const RMCMSG_STRINGVALUES = 2;
+const OLEDMSG_TWINKLESPEED = 1;
+const OLEDMSG_STRINGVALUES = 2;
 
 implementation
 
 end.
 
 
-sl.Add('LedButton');sl.Add('TextButton');sl.Add('Text');sl.Add('Led');sl.Add('TextLine');sl.Add('PitchKnob');
 
