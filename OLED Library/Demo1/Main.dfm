@@ -42,4 +42,90 @@ object frmMain: TfrmMain
     Font.Style = []
     ParentFont = False
   end
+  object OLEDPanel1: TOLEDPanel
+    Left = 24
+    Top = -8
+    Width = 105
+    Height = 100
+    Caption = ''
+    RoundRect = 10
+    DoubleBuffered = True
+    Color = 2434341
+    FontSize = 8
+    object OLEDPotentiometer1: TOLEDPotentiometer
+      AlignWithMargins = True
+      Left = 15
+      Top = 15
+      Width = 75
+      Height = 70
+      Cursor = crHandPoint
+      Margins.Left = 15
+      Margins.Top = 15
+      Margins.Right = 15
+      Margins.Bottom = 15
+      Align = alClient
+      Color = clRed
+      ParentColor = False
+      Index = 0
+      Caption = 'OLEDPotentiometer1'
+      ButtonColorOff = clGreen
+      ButtonColorOn = clRed
+      SliderColor = clWhite
+      TextWithSeg7 = False
+      Shape = tkLFO
+      MinValue = 0
+      MaxValue = 127
+      value = 0
+      OverLayR1 = 0
+      OverLayR2 = 0
+      OverLayShape = 0
+      ExplicitLeft = 0
+      ExplicitTop = 16
+      ExplicitWidth = 105
+      ExplicitHeight = 105
+    end
+  end
+  object OLEDPanel2: TOLEDPanel
+    Left = 135
+    Top = -8
+    Width = 105
+    Height = 100
+    Caption = ''
+    RoundRect = 10
+    DoubleBuffered = True
+    Color = 2434341
+    FontSize = 8
+    object OLEDPotentiometer2: TOLEDPotentiometer
+      AlignWithMargins = True
+      Left = 15
+      Top = 15
+      Width = 75
+      Height = 70
+      Cursor = crHandPoint
+      Margins.Left = 15
+      Margins.Top = 15
+      Margins.Right = 15
+      Margins.Bottom = 15
+      Align = alClient
+      Color = clNone
+      ParentColor = False
+      Index = 0
+      Caption = 'OLEDPotentiometer2'
+      ButtonColorOff = clBlack
+      ButtonColorOn = clBlack
+      SliderColor = clWhite
+      TextWithSeg7 = False
+      Shape = trLedButton
+      MinValue = 0
+      MaxValue = 127
+      value = 0
+      OverLayR1 = 0
+      OverLayR2 = 0
+      OverLayShape = 0
+      ExplicitLeft = 40
+      ExplicitTop = 32
+      ExplicitWidth = 105
+      ExplicitHeight = 105
+    end
+  end
 end

@@ -28,9 +28,9 @@ type
     FButtonColorOff, FButtonColorOn: TColor;
     FSliderColor: TColor;
     FTextWithSeg7: boolean;
-    FRMCElement: TOLEDPotentiometer;
+    FOLEDElement: TOLEDPotentiometer;
     procedure SetShape(value: TOLEDKnobShape);
-    constructor Create(RMCElement: TOLEDPotentiometer);
+    constructor Create(OLEDElement: TOLEDPotentiometer);
     procedure SetButtonColorOff(value: TColor);
     procedure SetButtonColorOn(value: TColor);
     procedure SetSliderColor(value: TColor);
@@ -87,7 +87,7 @@ type
     FButtonColorOff, FButtonColorOn: TColor;
     FSliderColor: TColor;
     FTextWithSeg7: boolean;
-    FRMCElement: TOLEDPotentiometer;
+    FOLEDElement: TOLEDPotentiometer;
 
     procedure SetKnobShape(value: TOLEDKnobShape);
     function GetKnobShape: TOLEDKnobShape;
@@ -410,7 +410,7 @@ begin
     round((FPosition.bottom - FPosition.top) * FHScale));
 end;
 
-{ TRMCElementRolandKnob }
+{ TOLEDElementRolandKnob }
 
 function TOLEDPotentiometer.BackColor: TColor;
 begin
@@ -422,39 +422,39 @@ end;
 
 { TOptions }
 
-constructor TOptions.Create(RMCElement: TOLEDPotentiometer);
+constructor TOptions.Create(OLEDElement: TOLEDPotentiometer);
 begin
-  FRMCElement := RMCElement;
+  FOLEDElement := OLEDElement;
 end;
 
 procedure TOptions.SetButtonColorOff(value: TColor);
 begin
   FButtonColorOff := value;
-  FRMCElement.Invalidate;
+  FOLEDElement.Invalidate;
 end;
 
 procedure TOptions.SetButtonColorOn(value: TColor);
 begin
   FButtonColorOn := value;
-  FRMCElement.Invalidate;
+  FOLEDElement.Invalidate;
 end;
 
 procedure TOptions.SetShape(value: TOLEDKnobShape);
 begin
   FShape := value;
-  FRMCElement.Shape := value;
+  FOLEDElement.Shape := value;
 end;
 
 procedure TOptions.SetSliderColor(value: TColor);
 begin
   FSliderColor := value;
-  FRMCElement.Invalidate;
+  FOLEDElement.Invalidate;
 end;
 
 procedure TOptions.SetTextWithSeg7(value: boolean);
 begin
   FTextWithSeg7 := value;
-  FRMCElement.Invalidate;
+  FOLEDElement.Invalidate;
 end;
 
 begin

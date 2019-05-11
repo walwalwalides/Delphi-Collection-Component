@@ -90,7 +90,7 @@ protected
      property Scalable: boolean read FScalable write FScalable default true;
 
     end;
-  TRMCBaseControlPanel = class (TOLEDBaseControlPanelCustom)
+  TOLEDBaseControlPanel = class (TOLEDBaseControlPanelCustom)
   public
   published
      property OnChanged;
@@ -103,7 +103,7 @@ protected
 
 implementation
 
-{ TRMCBaseControlPanel }
+{ TOLEDBaseControlPanel }
 
 procedure TOLEDBaseControlPanelCustom.setShape(index:integer;value:TOLEDKnobShape);
 VAR el:TOLEDPotentiometer;

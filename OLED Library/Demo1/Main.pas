@@ -8,12 +8,12 @@ uses
 
 type
   TfrmMain = class(TForm)
-    OLEDPanel1: TOLEDPanel;
-    OLEDPotentiometer1: TOLEDPotentiometer;
-    OLEDPanel2: TOLEDPanel;
-    OLEDPotentiometer2: TOLEDPotentiometer;
     lblValue1: TLabel;
     lblValue2: TLabel;
+    OLEDPanel1: TOLEDPanel;
+    OLEDPanel2: TOLEDPanel;
+    OLEDPotentiometer1: TOLEDPotentiometer;
+    OLEDPotentiometer2: TOLEDPotentiometer;
 
     procedure OLEDPotentiometer1Changed(Sender: TObject; index, value: Integer);
     procedure FormCreate(Sender: TObject);

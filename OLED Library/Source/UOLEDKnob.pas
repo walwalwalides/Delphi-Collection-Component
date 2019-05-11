@@ -53,7 +53,7 @@ end;
 
 procedure TKnobEditor.OnTimer(Sender:TObject);
 begin
-  if timerticks<30 then with TRMCBaseControlPanel(knobform) do
+  if timerticks<30 then with TOLEDBaseControlPanel(knobform) do
   begin
     if KnobLedOffset<>0 then
     begin
@@ -73,7 +73,7 @@ end;
 procedure TKnobEditor.EditKeyEnd;
 begin
   timer.enabled:=false;
-  if active then with TRMCBaseControlPanel(knobform) do
+  if active then with TOLEDBaseControlPanel(knobform) do
   begin
     if KnobLedOffset<>0 then
     begin
@@ -95,7 +95,7 @@ begin
   timer.enabled:=true;
   timerticks:=0;
   lastvalue:=value;
-  with TRMCBaseControlPanel(knobform) do
+  with TOLEDBaseControlPanel(knobform) do
   begin
     SaveLedColor:=GetLed(curKnob+KnobLedOffset);
     if assigned(onknobedit) then
@@ -105,7 +105,7 @@ end;
 
 procedure TKnobEditor.EditKnobMouseMove(knob, value: integer);
 begin
-    with TRMCBaseControlPanel(knobform) do
+    with TOLEDBaseControlPanel(knobform) do
     if assigned(onknobedit) then
     begin
       onknobedit(knobform,false,curknob,lastvalue);
