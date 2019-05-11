@@ -1,5 +1,5 @@
 # OLED Library
-- Set of Delphi VCL components, classes and routines for control tasks. 
+- Set of Delphi VCL components, classes and routines for Electrical Component. 
 
 ![](OLED-Library.png) 
 
