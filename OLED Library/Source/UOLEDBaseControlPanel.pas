@@ -24,7 +24,7 @@ type
      HeaderGeneratesMouseEvent:boolean;
      FonClicked: TonClicked;
      FonChanged: TonChanged;
-     FRMCElements    : TList<TOLEDPotentiometer>;
+     FOLEDElements    : TList<TOLEDPotentiometer>;
      FCaption:string;
      FScalable:boolean;
      FonKnobEdit:TonKnobEdit;
@@ -334,9 +334,9 @@ function TOLEDBaseControlPanelCustom.GetElement(index: integer): TOLEDPotentiome
 VAR i:integer;
 begin
   if FcachedElement<>NIL then if FcachedElement.index = index then begin result:=FcachedElement; exit; end;
-  for i:=0 to FRMCElements.Count-1 do
-    if (FRMCElements[i].index = index)
-      then  begin FcachedElement:=FRMCElements[i]; result:=FcachedElement; exit;end;
+  for i:=0 to FOLEDElements.Count-1 do
+    if (FOLEDElements[i].index = index)
+      then  begin FcachedElement:=FOLEDElements[i]; result:=FcachedElement; exit;end;
   FcachedElement:=_GetKnobElement(BasePanel);
   result:=FcachedElement;
 end;
@@ -418,8 +418,8 @@ begin
     GetDefaultDimensions(w,h);
     if (w<0.3) or (h<0.3) then exit;
   end;
-  for i:=0 to FRMCElements.Count-1 do
-    FRMCElements[i].SetScale(width/w, height / h);
+  for i:=0 to FOLEDElements.Count-1 do
+    FOLEDElements[i].SetScale(width/w, height / h);
 end;
 
 procedure TOLEDBaseControlPanelCustom.AddElement(el: TOLEDPotentiometer);
@@ -427,11 +427,11 @@ VAR i:integer;
 begin
   if el.Index>0 then
   begin
-    for i:=0 to FRMCElements.Count-1 do
-     if (FRMCElements[i].index = el.index) then
+    for i:=0 to FOLEDElements.Count-1 do
+     if (FOLEDElements[i].index = el.index) then
         OutputDebugString(PChar('Add Element: Duplicate Entry..'+DebugName+' '+inttostr(el.Index)));
   end;
-  FRMCElements.Add(el);
+  FOLEDElements.Add(el);
 end;
 
 procedure TOLEDBaseControlPanelCustom.Changed(Sender: TOLEDPotentiometer);
@@ -455,7 +455,7 @@ end;
 
 constructor TOLEDBaseControlPanelCustom.Create(AOwner: TComponent);
 begin
-  FRMCElements:=TList<TOLEDPotentiometer>.Create;
+  FOLEDElements:=TList<TOLEDPotentiometer>.Create;
   FScalable:=true;
   inherited Create(Aowner);
   DoubleBuffered:=true;
@@ -466,7 +466,7 @@ end;
 
 destructor TOLEDBaseControlPanelCustom.Destroy;
 begin
-  FRMCElements.Free;
+  FOLEDElements.Free;
   FKnobEditor.Free;
   inherited;
 end;

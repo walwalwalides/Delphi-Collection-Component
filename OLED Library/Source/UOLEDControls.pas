@@ -149,7 +149,7 @@ type
 
 implementation
 
-{$R RMC.RES}
+//{$R RMC.RES}
 
 uses Windows, Math;
 // type TVCLBitmap = Vcl.Graphics.TBitmap;

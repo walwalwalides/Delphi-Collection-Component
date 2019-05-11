@@ -45,7 +45,7 @@ implementation
 uses UOLEDControls;
 
 
-{ TRMCChannelBase }
+{ TOLEDChannelBase }
 
 procedure TOLEDPanel.SetCaption(value: string);
 begin

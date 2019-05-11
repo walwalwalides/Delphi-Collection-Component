@@ -72,7 +72,7 @@ object frmMain: TfrmMain
       ButtonColorOn = clRed
       SliderColor = clWhite
       TextWithSeg7 = False
-      Shape = tkLFO
+      Shape = trKnob
       MinValue = 0
       MaxValue = 127
       value = 0
