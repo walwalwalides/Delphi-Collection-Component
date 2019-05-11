@@ -1,5 +1,5 @@
 # OLED Library
-- Relite Main Application with DLL using XML files.
+- Set of Delphi VCL components, classes and routines for controls tasks. 
 
 ![](OLED-Library.png) 
 
