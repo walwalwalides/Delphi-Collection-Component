@@ -1,7 +1,7 @@
 # RGB Mixer Library
 - Set of Delphi VCL Components, Classes and Routines For RGB LED. 
 
-![](RGB_Mixer.png) 
+![](RGB_MIXER.png) 
 
 
 
