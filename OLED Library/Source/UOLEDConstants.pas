@@ -142,7 +142,7 @@ const
   clWhiteSmoke = TColor($00F5F5F5);
   clYellowGreen = TColor($0032CD9A);
 
-     //Define all diferent electrical Component
+                                   {Define all Diferent Electrical Component}
 type TOLEDKnobShape = (trKnob,trButton,trSlider,trPitchKnob,trNone,trMidi4,trLedButton,trTextButton,trText,trLed,trTextLine,
                       tkVCOWave,tkLFOWave,tkFoot,tkNoise,tkValue,tkLFO,tkNone,
                       tkSlider,tkSliderMulti,
