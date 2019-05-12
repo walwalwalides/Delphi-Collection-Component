@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{867F0A2F-546D-4470-A9B7-1CE226388DDE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="RGB_MixerLibDXE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DsgnRGB_MixerDXE.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RGB_MixerLibDXE">
+        <MSBuild Projects="RGB_MixerLibDXE.dproj"/>
+    </Target>
+    <Target Name="RGB_MixerLibDXE:Clean">
+        <MSBuild Projects="RGB_MixerLibDXE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RGB_MixerLibDXE:Make">
+        <MSBuild Projects="RGB_MixerLibDXE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DsgnRGB_MixerDXE">
+        <MSBuild Projects="DsgnRGB_MixerDXE.dproj"/>
+    </Target>
+    <Target Name="DsgnRGB_MixerDXE:Clean">
+        <MSBuild Projects="DsgnRGB_MixerDXE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DsgnRGB_MixerDXE:Make">
+        <MSBuild Projects="DsgnRGB_MixerDXE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RGB_MixerLibDXE;DsgnRGB_MixerDXE"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RGB_MixerLibDXE:Clean;DsgnRGB_MixerDXE:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RGB_MixerLibDXE:Make;DsgnRGB_MixerDXE:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
