@@ -8,6 +8,7 @@
 # Features  
 
 - Design RGB LED Component as VCL components.
+- Setting different Parameter to establish a Serial Connection.
 
 
 
