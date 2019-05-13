@@ -1,0 +1,31 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Demo1'
+  ClientHeight = 345
+  ClientWidth = 624
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MailContactLabel1: TMailContactLabel
+    Left = 16
+    Top = 16
+    Width = 137
+    Height = 25
+    Cursor = crHandPoint
+    Caption = 'E-Mail'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsUnderline]
+    ParentFont = False
+  end
+end

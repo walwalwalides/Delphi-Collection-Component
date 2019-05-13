@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{867F0A2F-546D-4470-A9B7-1CE226388DDE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ContactLibDXE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DsgnContactDXE.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ContactLibDXE">
+        <MSBuild Projects="ContactLibDXE.dproj"/>
+    </Target>
+    <Target Name="ContactLibDXE:Clean">
+        <MSBuild Projects="ContactLibDXE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ContactLibDXE:Make">
+        <MSBuild Projects="ContactLibDXE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DsgnContactDXE">
+        <MSBuild Projects="DsgnContactDXE.dproj"/>
+    </Target>
+    <Target Name="DsgnContactDXE:Clean">
+        <MSBuild Projects="DsgnContactDXE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DsgnContactDXE:Make">
+        <MSBuild Projects="DsgnContactDXE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ContactLibDXE;DsgnContactDXE"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ContactLibDXE:Clean;DsgnContactDXE:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ContactLibDXE:Make;DsgnContactDXE:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
