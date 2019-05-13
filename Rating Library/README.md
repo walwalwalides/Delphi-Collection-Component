@@ -1,14 +1,14 @@
 # OLED Library
-- Set of Delphi VCL Components, Classes and Routines For Electrical Component. 
+- Set of Delphi FMX Components, Classes and Routines For Rating tasks. 
 
-![](OLED-Library.png) 
+![](Rating-Library.png) 
 
 
 
 # Features  
 
-- Design Electrical Component as VCL components.
-- Design Rounded Panel.
+- Design Rating Component as FMX components.
+
 
 
 
@@ -17,18 +17,11 @@
 | File | Contents | 
 | --- | --- |
 | .gitignore | Git ignores the files in this file |
-| OLEDAbout.pas | About view of the Library |
-| OLEDReg.pas |OLEDReg Unit | 
-| UOLEDShape.pas |UOLEDShape Unit |
-| UOLEDBaseControlPanel.pas|UOLEDBaseControlPanel Unit | 
-| UOLEDBitmaps.pas| UOLEDBitmaps Unit |
-| UOLEDConstants.pas |UOLEDConstants Unit |
-| UOLEDControls.pas |UOLEDControls Unit | 
-| UOLEDKnob.pas |UOLEDKnob Unit |
-| UOLEDPanel.pas |UOLEDPanel Unit |
-| UOLED7Segment.pas |UOLED7Segment Unit |
+| RatingAbout.pas | About view of the Library |
+| FMX.shHeart.Rating.pas |FMX.shHeart.Rating Unit | 
+| FMX.Rating.Register.pas |FMX.Rating.Register Unit |
 | OLEDLIB.groupproj | The project group file |
-| OLEDLibDXE.dproj | The MSBUILD project file |
-| DsgOLEDDXE.dproj | The MSBUILD project file |
+| RatingLib.dproj | The MSBUILD project file |
+| RatingLib.dproj | The MSBUILD project file |
 | README.md | The readme for this project |
 
