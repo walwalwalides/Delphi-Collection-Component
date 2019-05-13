@@ -15,10 +15,10 @@ object frmMain: TfrmMain
   PixelsPerInch = 96
   TextHeight = 13
   object MailContactLabel1: TMailContactLabel
-    Left = 16
-    Top = 16
-    Width = 137
-    Height = 25
+    Left = 210
+    Top = 33
+    Width = 28
+    Height = 16
     Cursor = crHandPoint
     Caption = 'E-Mail'
     Font.Charset = DEFAULT_CHARSET
@@ -26,6 +26,19 @@ object frmMain: TfrmMain
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = [fsUnderline]
+    ParentFont = False
+  end
+  object lblContact: TLabel
+    Left = 8
+    Top = 33
+    Width = 188
+    Height = 13
+    Caption = 'U Can Contact Me On This Email   :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
     ParentFont = False
   end
 end

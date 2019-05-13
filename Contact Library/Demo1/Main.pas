@@ -9,6 +9,7 @@ uses
 type
   TfrmMain = class(TForm)
     MailContactLabel1: TMailContactLabel;
+    lblContact: TLabel;
     procedure FormCreate(Sender: TObject);
 
   private
@@ -30,6 +31,8 @@ implementation
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
    frmMain.Position:=poMainFormCenter;
+   MailContactLabel1.AdresseMail:='walwalwalides@gmail.com';
+   MailContactLabel1.SujetMail:='Question';
 end;
 
 end.
