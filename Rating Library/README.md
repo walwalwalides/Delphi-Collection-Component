@@ -1,4 +1,4 @@
-# OLED Library
+# Rating Library
 - Set of Delphi FMX Components, Classes and Routines For Rating Tasks. 
 
 ![](Rating-Library.png) 
