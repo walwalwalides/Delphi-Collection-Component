@@ -1,5 +1,5 @@
 # Contact Library
-- Set of Delphi VCL Components, Classes and Routines For User. 
+- Set of Delphi VCL Components, Classes and Routines For User Contact. 
 
 ![](Contact-Library.png) 
 
