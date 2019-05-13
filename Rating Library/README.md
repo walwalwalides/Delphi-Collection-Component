@@ -1,5 +1,5 @@
-# OLED Library
-- Set of Delphi FMX Components, Classes and Routines For Rating tasks. 
+# Rating Library
+- Set of Delphi FMX Components, Classes and Routines For Rating Tasks. 
 
 ![](Rating-Library.png) 
 
@@ -20,7 +20,6 @@
 | RatingAbout.pas | About view of the Library |
 | FMX.shHeart.Rating.pas |FMX.shHeart.Rating Unit | 
 | FMX.Rating.Register.pas |FMX.Rating.Register Unit |
-| OLEDLIB.groupproj | The project group file |
 | RatingLib.dproj | The MSBUILD project file |
 | RatingLib.dproj | The MSBUILD project file |
 | README.md | The readme for this project |
