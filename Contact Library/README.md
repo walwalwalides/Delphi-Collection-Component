@@ -20,6 +20,9 @@
 | ContactAbout.pas | About view of the Library |
 | ContactReg.pas |ContactReg Unit | 
 | MailContactLabel.pas |MailContactLabel Unit |
+| uCalendarText.pas |uCalendarText Unit |
+| uCalendarBitmaps.pas |uCalendarBitmaps Unit |
+| uCalendarPicture.pas |uCalendarPicture Unit |
 | ContactLib.groupproj | The project group file |
 | ContactLibDXE.dproj | The MSBUILD project file |
 | DsgContactDXE.dproj | The MSBUILD project file |
