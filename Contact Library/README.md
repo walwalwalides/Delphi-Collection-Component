@@ -10,7 +10,10 @@
 - Design Contact Component as VCL components.
 
 
+# Contains 
 
+- TCalendarPicture.
+- TMailContactLabel.
 
 ## Files
 
