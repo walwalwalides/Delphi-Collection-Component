@@ -73,11 +73,11 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <Icon_MainIcon>OLEDLib.ico</Icon_MainIcon>
+        <Icon_MainIcon>ContactLib.ico</Icon_MainIcon>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <Icon_MainIcon>OLEDLib.ico</Icon_MainIcon>
+        <Icon_MainIcon>ContactLib.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
@@ -102,6 +102,12 @@
         <DCCReference Include="vclx.dcp"/>
         <DCCReference Include="vclimg.dcp"/>
         <DCCReference Include="MailContactLabel.pas"/>
+        <DCCReference Include="uCalendarText.pas"/>
+        <DCCReference Include="uCalendarPicture.pas"/>
+        <DCCReference Include="uCalendarBitmaps.pas"/>
+        <RcCompile Include="Resource\BMPCalendar\BMPresource.rc">
+            <Form>BMPresource.res</Form>
+        </RcCompile>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -2,6 +2,7 @@ package DsgnContactDXE;
 
 {$R *.res}
 {$R 'DRC\TMAILCONTACTLABEL.dcr'}
+{$R 'DRC\TCALENDARPICTURE.dcr'}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
