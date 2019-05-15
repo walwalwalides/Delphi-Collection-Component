@@ -14,6 +14,7 @@
 
 - TCalendarPicture.
 - TMailContactLabel.
+- TContactArrayBtn.
 
 ## Files
 
