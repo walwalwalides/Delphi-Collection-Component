@@ -1,0 +1,29 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Demo3'
+  ClientHeight = 299
+  ClientWidth = 635
+  Color = clSilver
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object ContactArrayBtn1: TContactArrayBtn
+    Left = 20
+    Top = 8
+    Width = 195
+    Height = 155
+    BtnHeight = 30
+    BtnWidth = 40
+    Color = clAppWorkSpace
+    Columns = 4
+    Rows = 4
+  end
+end

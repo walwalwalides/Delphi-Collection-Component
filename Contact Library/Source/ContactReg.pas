@@ -42,7 +42,7 @@ implementation
 
 
 uses
-  MailContactLabel, ContactAbout,uCalendarPicture,
+  MailContactLabel, ContactAbout,uCalendarPicture,uContactArrayButton,
   Forms, Dialogs, Graphics;
 
 (*****************************************
@@ -80,9 +80,10 @@ end;
 
 procedure Register;
 begin
-  RegisterComponents('Contact Library', [TMailContactLabel,TCalendarpicture]);
+  RegisterComponents('Contact Library', [TMailContactLabel,TCalendarpicture,TContactArrayBtn]);
   RegisterComponentEditor(TMailContactLabel, TContactLibraryEditor);
   RegisterComponentEditor(TCalendarpicture, TContactLibraryEditor);
+   RegisterComponentEditor(TContactArrayBtn, TContactLibraryEditor);
 
 end;
 

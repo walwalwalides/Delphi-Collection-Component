@@ -39,6 +39,7 @@ contains
   MailContactLabel in 'MailContactLabel.pas',
   uCalendarText in 'uCalendarText.pas',
   uCalendarPicture in 'uCalendarPicture.pas',
-  uCalendarBitmaps in 'uCalendarBitmaps.pas';
+  uCalendarBitmaps in 'uCalendarBitmaps.pas',
+  uContactArrayButton in 'uContactArrayButton.pas';
 
 end.
