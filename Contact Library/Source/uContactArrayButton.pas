@@ -52,6 +52,7 @@ type
     FPcolorTable: TPColorTable;
     FBtnControl: array [0 .. ContactMaxBtn] of byte;
     FNextRelease: byte;
+    FBtnCaptionSize: byte;
     procedure setRows(n: byte);
     procedure setColumns(n: byte);
     procedure setBtnWidth(n: byte);
@@ -71,6 +72,7 @@ type
     function GetBtnOpMode(BtnNr: byte): TBtnOpmode;
     function GetContacts(Index: Integer): string;
     procedure SetContacts(Index: Integer; const Value: string);
+    procedure setBtnCaptionSize(n: byte);
   protected
     procedure paint; override;
     procedure MouseDown(button: TmouseButton; Shift: TShiftState; X, Y: Integer); override;
@@ -95,6 +97,7 @@ type
 
     property Border: byte read FBorder write setBorder default 10;
     property BtnHeight: byte read FbtnHeight write setBtnHeight default 20;
+    property BtnCaptionSize: byte read FBtnCaptionSize write setBtnCaptionSize default 6;
     property BtnSpacing: byte read FBtnSpacing write setSpacing default 5;
     property BtnShape: TBtnShape read FBtnShape write setBtnshape default bs3D;
     property BtnWidth: byte read FbtnWidth write setBtnWidth default 30;
@@ -317,14 +320,14 @@ begin
 
       end;
 
-      for K := 0 to FColumns - 1 do
+      for K := 0 to Fcolumns - 1 do
       begin
         for j := 0 to Frows - 1 do
         begin
           with canvas do
           begin
             brush.Color := $C0C0C0;
-            Font.Size := 6;
+            Font.Size := FBtnCaptionSize;
             if (K = 0) then
             begin
               if (j <> 0) then
@@ -354,7 +357,7 @@ begin
             sumCR := inttostr((j * Fcolumns) + K);
 
           end;
-          canvas.TextOut((12 + (45 * K)), (28 + (35 * j)), ('Contact' + sumCR));
+          canvas.TextOut((13 + ((FbtnWidth + 5) * K)), (29 + ((FbtnHeight + 5) * j)), ('Contact' + sumCR));
         end;
       end;
 
@@ -406,6 +409,7 @@ begin
   FbtnHeight := 30;
   FBtnSpacing := 5;
   FBorder := 10;
+  FBtnCaptionSize := 6;
   Color := clAppWorkSpace;
   fixdimensions; // set width , height
 
@@ -602,11 +606,20 @@ begin
   invalidate;
 end;
 
+procedure TContactArrayBtn.setBtnCaptionSize(n: byte);
+begin
+  if (n < 6) then
+    n := 6;
+  FBtnCaptionSize := n;
+  fixdimensions;
+  invalidate;
+end;
+
 procedure TContactArrayBtn.setBtnEdge(edge: byte);
 begin
-  if edge = 0 then
+  if (edge = 0) then
     edge := 1
-  else if edge > 2 then
+  else if (edge > 2) then
     edge := 2;
   FBtnEdge := edge;
   repaintBtns;

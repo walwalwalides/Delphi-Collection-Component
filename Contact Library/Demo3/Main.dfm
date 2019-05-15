@@ -18,10 +18,11 @@ object frmMain: TfrmMain
   object ContactArrayBtn1: TContactArrayBtn
     Left = 8
     Top = 8
-    Width = 195
-    Height = 155
-    BtnHeight = 30
-    BtnWidth = 40
+    Width = 435
+    Height = 235
+    BtnHeight = 50
+    BtnCaptionSize = 8
+    BtnWidth = 100
     Color = clAppWorkSpace
     Columns = 4
     Rows = 4
