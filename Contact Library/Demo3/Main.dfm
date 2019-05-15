@@ -16,7 +16,7 @@ object frmMain: TfrmMain
   PixelsPerInch = 96
   TextHeight = 13
   object ContactArrayBtn1: TContactArrayBtn
-    Left = 20
+    Left = 8
     Top = 8
     Width = 195
     Height = 155
@@ -25,5 +25,14 @@ object frmMain: TfrmMain
     Color = clAppWorkSpace
     Columns = 4
     Rows = 4
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 266
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 0
+    OnClick = Button1Click
   end
 end

@@ -9,6 +9,9 @@
         <Projects Include="DsgnContactDXE.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\Demo3\Demo3.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="DsgnContactDXE:Make">
         <MSBuild Projects="DsgnContactDXE.dproj" Targets="Make"/>
     </Target>
+    <Target Name="Demo3">
+        <MSBuild Projects="..\Demo3\Demo3.dproj"/>
+    </Target>
+    <Target Name="Demo3:Clean">
+        <MSBuild Projects="..\Demo3\Demo3.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Demo3:Make">
+        <MSBuild Projects="..\Demo3\Demo3.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="ContactLibDXE;DsgnContactDXE"/>
+        <CallTarget Targets="ContactLibDXE;DsgnContactDXE;Demo3"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ContactLibDXE:Clean;DsgnContactDXE:Clean"/>
+        <CallTarget Targets="ContactLibDXE:Clean;DsgnContactDXE:Clean;Demo3:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ContactLibDXE:Make;DsgnContactDXE:Make"/>
+        <CallTarget Targets="ContactLibDXE:Make;DsgnContactDXE:Make;Demo3:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

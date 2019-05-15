@@ -1,5 +1,5 @@
 { ============================================
-  Software Name : 	ArrayButton
+  Software Name : 	ContactArrayButton
   ============================================ }
 { ******************************************** }
 { Written By WalWalWalides }
@@ -11,7 +11,7 @@ unit uContactArrayButton;
 
 interface
 
-uses windows, extctrls, controls, classes, graphics, messages,sysUtils;
+uses windows, extctrls, controls, classes, graphics, messages, sysUtils;
 
 const
   ContactMaxBtn = 48;
@@ -316,18 +316,45 @@ begin
         // ---------------------------------------------//
 
       end;
-      for K := 0 to Fcolumns - 1 do
+
+      for K := 0 to FColumns - 1 do
       begin
         for j := 0 to Frows - 1 do
         begin
           with canvas do
           begin
             brush.Color := $C0C0C0;
-            Font.Size:=7;
-            sumCR := inttostr(j*K+4);
-            TextOut(12 + (45 * K), 20 + (35 * j), 'Contact'+sumCR);
+            Font.Size := 6;
+            if (K = 0) then
+            begin
+              if (j <> 0) then
+              begin
+                sumCR := inttostr(j * Fcolumns)
+              end
+              else
+              begin
+                sumCR := '0';
+              end;
+            end;
+          end;
+
+          if (j = 0) then
+          begin
+            if (K <> 0) then
+            begin
+              sumCR := inttostr(K * 1)
+            end
+            else
+            begin
+              sumCR := '0';
+            end;
+          end;
+          if (K <> 0) and (j <> 0) then
+          begin
+            sumCR := inttostr((j * Fcolumns) + K);
 
           end;
+          canvas.TextOut((12 + (45 * K)), (28 + (35 * j)), ('Contact' + sumCR));
         end;
       end;
 
