@@ -28,8 +28,8 @@ object frmMain: TfrmMain
     Rows = 4
   end
   object Button1: TButton
-    Left = 8
-    Top = 266
+    Left = 528
+    Top = 202
     Width = 75
     Height = 25
     Caption = 'Button1'
