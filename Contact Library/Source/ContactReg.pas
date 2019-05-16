@@ -2,14 +2,15 @@
   Software Name : 	Contact Library
   ============================================ }
 { ******************************************** }
-{ Written By WalWalWalides                     }
-{ CopyRight © 2019                             }
-{ Email : WalWalWalides@gmail.com              }
-{ GitHub :https://github.com/walwalwalides     }
+{ Written By WalWalWalides }
+{ CopyRight © 2019 }
+{ Email : WalWalWalides@gmail.com }
+{ GitHub :https://github.com/walwalwalides }
 { ******************************************** }
 
 unit ContactReg;
- {$I OLED.inc}
+{$I OLED.inc}
+
 interface
 
 uses
@@ -32,22 +33,17 @@ type
 {$ENDIF}
   end;
 
-
-
-
-
 procedure Register;
 
 implementation
 
-
 uses
-  MailContactLabel, ContactAbout,uCalendarPicture,uContactArrayButton,
+  MailContactLabel, ContactAbout, uCalendarPicture, uContactArrayButton, uContactSmoothButton,
   Forms, Dialogs, Graphics;
 
-(*****************************************
- * TMixerLibraryEditor editor              *
- *****************************************)
+(* ****************************************
+  * TMixerLibraryEditor editor              *
+  **************************************** *)
 
 procedure TContactLibraryEditor.ExecuteVerb(Index: Integer);
 begin
@@ -67,24 +63,21 @@ begin
 end;
 
 {$IFDEF DELPHI_5}
-procedure TContactLibraryEditor.PrepareItem(Index: Integer;
-  const AItem: TMenuItem);
+
+procedure TContactLibraryEditor.PrepareItem(Index: Integer; const AItem: TMenuItem);
 begin
   if Index = 0 then
     AItem.Bitmap.LoadFromResourceName(HInstance, 'ContactLIB');
 end;
 {$ENDIF}
 
-
-
-
 procedure Register;
 begin
-  RegisterComponents('Contact Library', [TMailContactLabel,TCalendarpicture,TContactArrayBtn]);
+  RegisterComponents('Contact Library', [TMailContactLabel, TCalendarpicture, TContactArrayBtn, TContactSmoothButton]);
   RegisterComponentEditor(TMailContactLabel, TContactLibraryEditor);
   RegisterComponentEditor(TCalendarpicture, TContactLibraryEditor);
-   RegisterComponentEditor(TContactArrayBtn, TContactLibraryEditor);
-
+  RegisterComponentEditor(TContactArrayBtn, TContactLibraryEditor);
+  RegisterComponentEditor(TContactSmoothButton, TContactLibraryEditor);
 end;
 
 end.

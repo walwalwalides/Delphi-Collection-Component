@@ -40,6 +40,8 @@ contains
   uCalendarText in 'uCalendarText.pas',
   uCalendarPicture in 'uCalendarPicture.pas',
   uCalendarBitmaps in 'uCalendarBitmaps.pas',
-  uContactArrayButton in 'uContactArrayButton.pas';
+  uContactArrayButton in 'uContactArrayButton.pas',
+  uContactSmoothButton in 'uContactSmoothButton.pas',
+  UContactSmoothEngine in 'UContactSmoothEngine.pas';
 
 end.
