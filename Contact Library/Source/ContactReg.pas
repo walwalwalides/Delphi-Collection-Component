@@ -73,11 +73,11 @@ end;
 
 procedure Register;
 begin
-  RegisterComponents('Contact Library', [TMailContactLabel, TCalendarpicture, TContactArrayBtn, TContactSmoothButton]);
+  RegisterComponents('Contact Library', [TMailContactLabel, TCalendarpicture, TContactArrayBtn, TContactSmoothBtn]);
   RegisterComponentEditor(TMailContactLabel, TContactLibraryEditor);
   RegisterComponentEditor(TCalendarpicture, TContactLibraryEditor);
   RegisterComponentEditor(TContactArrayBtn, TContactLibraryEditor);
-  RegisterComponentEditor(TContactSmoothButton, TContactLibraryEditor);
+  RegisterComponentEditor(TContactSmoothBtn, TContactLibraryEditor);
 end;
 
 end.

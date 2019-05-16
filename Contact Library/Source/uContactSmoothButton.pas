@@ -1,5 +1,5 @@
 { ============================================
-  Software Name : 	TContactSmoothButton
+  Software Name : 	TContactSmoothBtn
   ============================================ }
 { ******************************************** }
 { Written By WalWalWalides }
@@ -84,7 +84,7 @@ type
     { Déclarations publiées }
   end;
 
-  TContactSmoothButton = class(TCustomSmoothButton)
+  TContactSmoothBtn = class(TCustomSmoothButton)
   published
     property Default;
     property Cancel;
@@ -117,14 +117,9 @@ type
     property TabStop;
   end;
 
-procedure Register;
 
 implementation
 
-procedure Register;
-begin
-  RegisterComponents('Contact Library', [TContactSmoothButton]);
-end;
 
 function LeftButtonPressed: Boolean;
 begin

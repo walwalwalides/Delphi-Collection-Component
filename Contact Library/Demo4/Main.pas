@@ -1,3 +1,14 @@
+{ ============================================
+  Software Name : 	Demo4
+  ============================================ }
+{ ******************************************** }
+{ Written By WalWalWalides                     }
+{ CopyRight © 2019                             }
+{ Email : WalWalWalides@gmail.com              }
+{ GitHub :https://github.com/walwalwalides     }
+{ ******************************************** }
+//-------------------------------------------------------------
+//Exemple how to use ContactSmoothBtn
 unit Main;
 
 interface
@@ -8,10 +19,10 @@ uses
 
 type
   TfrmMain = class(TForm)
-    ContactbtnGreen: TContactSmoothButton;
     pnlRight: TPanel;
     pnlLeft: TPanel;
     ilGlyph: TImageList;
+    ContactSmoothBtn1: TContactSmoothBtn;
     procedure FormCreate(Sender: TObject);
     procedure ContactbtnGreenMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure ContactbtnGreenMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);

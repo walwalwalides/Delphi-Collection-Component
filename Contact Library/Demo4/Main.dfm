@@ -14,7 +14,29 @@ object frmMain: TfrmMain
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object ContactbtnGreen: TContactSmoothButton
+  object pnlLeft: TPanel
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Width = 75
+    Height = 444
+    Align = alLeft
+    Color = clRed
+    ParentBackground = False
+    TabOrder = 0
+  end
+  object pnlRight: TPanel
+    AlignWithMargins = True
+    Left = 677
+    Top = 3
+    Width = 75
+    Height = 444
+    Align = alRight
+    Color = clRed
+    ParentBackground = False
+    TabOrder = 1
+  end
+  object ContactSmoothBtn1: TContactSmoothBtn
     Left = 84
     Top = 3
     Width = 75
@@ -32,35 +54,11 @@ object frmMain: TfrmMain
     Down = False
     AllowDown = False
     State = bsIdle
-    OnMouseUp = ContactbtnGreenMouseUp
-    OnMouseDown = ContactbtnGreenMouseDown
-    TabOrder = 0
-  end
-  object pnlLeft: TPanel
-    AlignWithMargins = True
-    Left = 3
-    Top = 3
-    Width = 75
-    Height = 444
-    Align = alLeft
-    Color = clRed
-    ParentBackground = False
-    TabOrder = 1
-  end
-  object pnlRight: TPanel
-    AlignWithMargins = True
-    Left = 677
-    Top = 3
-    Width = 75
-    Height = 444
-    Align = alRight
-    Color = clRed
-    ParentBackground = False
     TabOrder = 2
   end
   object ilGlyph: TImageList
-    Left = 328
-    Top = 8
+    Left = 176
+    Top = 96
     Bitmap = {
       494C010102000500040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010

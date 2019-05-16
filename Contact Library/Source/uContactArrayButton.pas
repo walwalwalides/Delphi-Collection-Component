@@ -114,17 +114,12 @@ type
     property Visible;
   end;
 
-procedure Register;
 
 implementation
 
 const
   defaultColors: TColorTable = ($C0C0C0, $F0F0F0, $808080, $FFFFFF, $202020);
 
-procedure Register;
-begin
-  RegisterComponents('Contact Library', [TContactArrayBtn]);
-end;
 
 procedure TContactArrayBtn.setBtnOpmode(BtnNr: byte; opMode: TBtnOpmode);
 var
