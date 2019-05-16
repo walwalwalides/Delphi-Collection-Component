@@ -27,6 +27,9 @@
 | uCalendarText.pas |uCalendarText Unit |
 | uCalendarBitmaps.pas |uCalendarBitmaps Unit |
 | uCalendarPicture.pas |uCalendarPicture Unit |
+| uContactArrayButton.pas |uContactArrayButton Unit |
+| uContactSmoothButton.pas |uContactSmoothButton Unit |
+| uContactSmoothEngine.pas |uContactSmoothEngine Unit |
 | ContactLib.groupproj | The project group file |
 | ContactLibDXE.dproj | The MSBUILD project file |
 | DsgContactDXE.dproj | The MSBUILD project file |
