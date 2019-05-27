@@ -11,7 +11,7 @@
       <DATACONTACT>
          <DTSTART>20160530</DTSTART>
          <DTEND>20160627</DTEND>
-         <FOREND>-10.00</FOREND>
+         <FOREND>0</FOREND>
          <ITEMS>
             <JOBTYPE>1</JOBTYPE>
             <BIRTHDAY>19950601</BIRTHDAY>
