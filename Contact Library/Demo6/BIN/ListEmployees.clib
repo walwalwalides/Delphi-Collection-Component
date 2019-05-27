@@ -1,0 +1,73 @@
+<CLIB>
+   <DTD>2</DTD>
+   <CPAGE>1252</CPAGE>
+   <CONTACT>
+      <DEFCONTACT>
+         <CONTACTID>001</CONTACTID>
+         <BRANCHID>500</BRANCHID>
+         <ACCTID>1111</ACCTID>
+         <ACCTTYPE>0</ACCTTYPE>
+      </DEFCONTACT>
+      <DATACONTACT>
+         <DTSTART>20160530</DTSTART>
+         <DTEND>20160627</DTEND>
+         <FOREND>-10.00</FOREND>
+         <ITEMS>
+            <JOBTYPE>1</JOBTYPE>
+            <BIRTHDAY>19950601</BIRTHDAY>
+            <AGE>25</AGE>
+            <ID>2016060111650</ID>
+            <DESCRIPTION>BAD WORKER</DESCRIPTION>
+            <TELEFON>91100701</TELEFON>
+         </ITEMS>
+         <ITEMS>
+            <JOBTYPE>0</JOBTYPE>
+            <BIRTHDAY>20000602</BIRTHDAY>
+            <AGE>30</AGE>
+            <ID>2016060202176000</ID>
+            <TELEFON>00121482</TELEFON>
+            <DESCRIPTION>BAD WORKER</DESCRIPTION>
+         </ITEMS>
+         <ITEMS>
+            <JOBTYPE>1</JOBTYPE>
+            <BIRTHDAY>20160102</BIRTHDAY>
+            <AGE>32</AGE>
+            <ID>201606021400000</ID>
+            <TELEFON>71580758</TELEFON>
+            <DESCRIPTION>BAD WORKER</DESCRIPTION>
+         </ITEMS>
+         <ITEMS>
+            <JOBTYPE>0</JOBTYPE>
+            <BIRTHDAY>20101003</BIRTHDAY>
+            <AGE>35</AGE>
+            <ID>201606030137050</ID>
+            <TELEFON>00000123</TELEFON>
+            <DESCRIPTION>BAD WORKER</DESCRIPTION>
+         </ITEMS>
+         <ITEMS>
+            <JOBTYPE>1</JOBTYPE>
+            <BIRTHDAY>20131203</BIRTHDAY>
+            <AGE>42</AGE>
+            <ID>20160603149980</ID>
+            <TELEFON>00141658</TELEFON>
+            <DESCRIPTION>BAD WORKER</DESCRIPTION>
+         </ITEMS>
+         <ITEMS>
+            <JOBTYPE>1</JOBTYPE>
+            <BIRTHDAY>19950703</BIRTHDAY>
+            <AGE>39</AGE>
+            <ID>201606031433760</ID>
+            <TELEFON>00010758</TELEFON>
+            <DESCRIPTION>GOOD WORKER</DESCRIPTION>
+         </ITEMS>
+         <ITEMS>
+            <JOBTYPE>1</JOBTYPE>
+            <BIRTHDAY>19900605</BIRTHDAY>
+            <AGE>36</AGE>
+            <ID>201606031433760</ID>
+            <TELEFON>00010758</TELEFON>
+            <DESCRIPTION>GOOD WORKER</DESCRIPTION>
+         </ITEMS>
+      </DATACONTACT>
+   </CONTACT>
+</CLIB>

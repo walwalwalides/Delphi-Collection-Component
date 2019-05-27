@@ -123,6 +123,7 @@
         <DCCReference Include="DRC\TCALENDARPICTURE.dcr"/>
         <DCCReference Include="DRC\TCONTACTARRAYBTN.dcr"/>
         <DCCReference Include="DRC\TCONTACTSMOOTHBTN.dcr"/>
+        <DCCReference Include="DRC\TCONTACTREADER.dcr"/>
         <DCCReference Include="DRC\TCONTACTCURRENCY.dcr"/>
         <DCCReference Include="vcl.dcp"/>
         <DCCReference Include="OLEDLibDXE.dcp"/>

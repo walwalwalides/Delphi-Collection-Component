@@ -5,6 +5,7 @@ package DsgnContactDXE;
 {$R 'DRC\TCALENDARPICTURE.dcr'}
 {$R 'DRC\TCONTACTARRAYBTN.dcr'}
 {$R 'DRC\TCONTACTSMOOTHBTN.dcr'}
+{$R 'DRC\TCONTACTREADER.dcr'}
 {$R 'DRC\TCONTACTCURRENCY.dcr'}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
