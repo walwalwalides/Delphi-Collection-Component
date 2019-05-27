@@ -38,7 +38,7 @@ procedure Register;
 implementation
 
 uses
-  MailContactLabel, ContactAbout, uCalendarPicture, uContactArrayButton, uContactSmoothButton,
+  MailContactLabel, ContactAbout, uCalendarPicture, uContactArrayButton, uContactSmoothButton,uCurrencyContact,
   Forms, Dialogs, Graphics;
 
 (* ****************************************
@@ -73,9 +73,10 @@ end;
 
 procedure Register;
 begin
-  RegisterComponents('Contact Library', [TMailContactLabel, TCalendarpicture, TContactArrayBtn, TContactSmoothBtn]);
+  RegisterComponents('Contact Library', [TMailContactLabel, TCalendarpicture, TContactArrayBtn, TContactSmoothBtn,TContactCurrency]);
   RegisterComponentEditor(TMailContactLabel, TContactLibraryEditor);
   RegisterComponentEditor(TCalendarpicture, TContactLibraryEditor);
+  RegisterComponentEditor(TContactCurrency, TContactLibraryEditor);
   RegisterComponentEditor(TContactArrayBtn, TContactLibraryEditor);
   RegisterComponentEditor(TContactSmoothBtn, TContactLibraryEditor);
 end;

@@ -42,6 +42,7 @@ contains
   uCalendarBitmaps in 'uCalendarBitmaps.pas',
   uContactArrayButton in 'uContactArrayButton.pas',
   uContactSmoothButton in 'uContactSmoothButton.pas',
-  UContactSmoothEngine in 'UContactSmoothEngine.pas';
+  UContactSmoothEngine in 'UContactSmoothEngine.pas',
+  uCurrencyContact in 'uCurrencyContact.pas';
 
 end.
