@@ -16,6 +16,8 @@
 - TMailContactLabel.
 - TContactArrayBtn.
 - TContactSmoothBtn.
+- TContactCurrency.
+
 ## Files
 
 | File | Contents | 
