@@ -17,6 +17,7 @@
 - TContactArrayBtn.
 - TContactSmoothBtn.
 - TContactCurrency.
+- TContactReader.
 
 ## Files
 
@@ -25,6 +26,7 @@
 | .gitignore | Git ignores the files in this file |
 | ContactAbout.pas | About view of the Library |
 | ContactReg.pas |ContactReg Unit | 
+| uReaderContact.pas |ContactReg Unit |
 | MailContactLabel.pas |MailContactLabel Unit |
 | uCalendarText.pas |uCalendarText Unit |
 | uCalendarBitmaps.pas |uCalendarBitmaps Unit |
