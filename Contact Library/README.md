@@ -9,6 +9,12 @@
 
 - Design Contact Component as VCL components.
 
+# View
+- ContactImagePanel :
+
+![](View/ContactImagePanel.gif)
+
+
 
 # Contains 
 
@@ -18,6 +24,7 @@
 - TContactSmoothBtn.
 - TContactCurrency.
 - TContactReader.
+- TContactImagePanel.
 
 ## Files
 
