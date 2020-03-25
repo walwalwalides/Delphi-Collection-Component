@@ -3,7 +3,7 @@
   ============================================ }
 { ******************************************** }
 { Written By WalWalWalides }
-{ CopyRight © 2019 }
+{ CopyRight © 2020 }
 { Email : WalWalWalides@gmail.com }
 { GitHub :https://github.com/walwalwalides }
 { ******************************************** }
@@ -38,8 +38,8 @@ procedure Register;
 implementation
 
 uses
-  MailContactLabel, ContactAbout, uCalendarPicture, uContactArrayButton, uContactSmoothButton,uCurrencyContact,uReaderContact,
-  Forms, Dialogs, Graphics;
+  MailContactLabel, ContactAbout, uCalendarPicture, uContactArrayButton, uContactSmoothButton,uCurrencyContact,uReaderContact,ucontactImagepanel
+  ,Forms, Dialogs, Graphics;
 
 (* ****************************************
   * TMixerLibraryEditor editor              *
@@ -73,14 +73,14 @@ end;
 
 procedure Register;
 begin
-  RegisterComponents('Contact Library', [TMailContactLabel, TCalendarpicture, TContactArrayBtn, TContactSmoothBtn,TContactCurrency,TContactReader]);
+  RegisterComponents('Contact Library', [TMailContactLabel, TCalendarpicture, TContactArrayBtn,TContactImagePanel,TContactSmoothBtn,TContactCurrency,TContactReader]);
   RegisterComponentEditor(TMailContactLabel, TContactLibraryEditor);
   RegisterComponentEditor(TCalendarpicture, TContactLibraryEditor);
   RegisterComponentEditor(TContactCurrency, TContactLibraryEditor);
   RegisterComponentEditor(TContactArrayBtn, TContactLibraryEditor);
   RegisterComponentEditor(TContactSmoothBtn, TContactLibraryEditor);
   RegisterComponentEditor(TContactReader, TContactLibraryEditor);
-
+  RegisterComponentEditor(TContactImagePanel, TContactLibraryEditor);
 end;
 
 end.
