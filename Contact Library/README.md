@@ -10,7 +10,7 @@
 - Design Contact Component as VCL components.
 
 # View
-|ContactImagePanel| :
+-- ContactImagePanel :
 
 ![](View/ContactImagePanel.gif)
 
