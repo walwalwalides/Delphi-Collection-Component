@@ -44,6 +44,7 @@ contains
   uContactSmoothButton in 'uContactSmoothButton.pas',
   UContactSmoothEngine in 'UContactSmoothEngine.pas',
   uCurrencyContact in 'uCurrencyContact.pas',
-  uReaderContact in 'uReaderContact.pas';
+  uReaderContact in 'uReaderContact.pas',
+  uContactImagePanel in 'uContactImagePanel.pas';
 
 end.
