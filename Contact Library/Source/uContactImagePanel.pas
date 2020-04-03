@@ -1,3 +1,23 @@
+{ ============================================
+  Software Name :     ContactImagePanel
+  ============================================ }
+{ ******************************************** }
+{ Written By WalWalWalides                     }
+{ CopyRight © 2020                             }
+{ Email : WalWalWalides@gmail.com              }
+{ GitHub :https://github.com/walwalwalides     }
+{ ******************************************** }
+
+{
+Description:
+Extented Component of TImage CLass
+Functionality :
+- Relate panel to image and make it slide.
+
+}
+
+
+
 unit uContactImagePanel;
 
 interface
