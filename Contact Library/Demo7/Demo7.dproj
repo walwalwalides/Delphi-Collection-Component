@@ -129,6 +129,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp260.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
                     <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\RvDesign110.bpl">Datei C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\RvDesign110.bpl nicht gefunden</Excluded_Packages>
+                    <Excluded_Packages Name="C:\ProgIDE\Komponenten\ComponentAce\ZipForge\Lib\Delphi 10.3 and C++ Builder 10.3 (Rio)\dclZipForged26.bpl">Datei C:\ProgIDE\Komponenten\ComponentAce\ZipForge\Lib\Delphi 10.3 and C++ Builder 10.3 (Rio)\dclZipForged26.bpl nicht gefunden</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
