@@ -4,6 +4,12 @@
 **Authors:**  *WalWalWalides*
 ------
 
+![GitHub](https://img.shields.io/github/license/walwalwalides/Delphi-Collection-Component)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/walwalwalides/Delphi-Collection-Component)
+![Platform](https://img.shields.io/badge/delphi->%3D_2010-Delphi-Collection-Component)
+![GitHub last commit](https://img.shields.io/github/last-commit/msnts/Delphi-Collection-Component)
+[![GitHub stars](https://img.shields.io/github/stars/walwalwalides/Delphi-Collection-Component)](https://github.com/walwalwalides/Delphi-Collection-Component/stargazers)
+
 ## Contains
 
 | File | Contents | 
