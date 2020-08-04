@@ -16,7 +16,6 @@
 
 | File | Contents | 
 | --- | --- |
-| .gitignore | Git ignores the files in this file |
 | OLEDAbout.pas | About view of the Library |
 | OLEDReg.pas |OLEDReg Unit | 
 | UOLEDShape.pas |UOLEDShape Unit |
@@ -31,4 +30,6 @@
 | OLEDLibDXE.dproj | The MSBUILD project file |
 | DsgOLEDDXE.dproj | The MSBUILD project file |
 | README.md | The readme for this project |
+| .gitignore | Git ignores the files in this file |
+
 
