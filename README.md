@@ -1,6 +1,10 @@
 # Delphi-Component
-- My Own Delphi Component
-![](Delphi-Component.jpg)
+> My Own Delphi Component
+
+<p align ="center">
+<img src =Delphi-Component.jpg/>
+<p/>
+
 **Authors:**  *WalWalWalides*
 ------
 ![Platforms](https://img.shields.io/badge/Supported%20platforms-Win32%20and%20Win64-red.svg)
